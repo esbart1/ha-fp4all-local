@@ -1,9 +1,6 @@
 __pycache__/
 *.pyc
-*.log
 *.rar
-*.pyc
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
+*.txt
+*.log
+*.zip
