@@ -1,8 +1,8 @@
 """
 FP4All Local for Home Assistant
 
-Version : 0.3
-Build   : 2.4.2
+Version : 0.4
+Build   : 3.0.2
 File    : status_parser.py
 
 Parses status.htm from the FP4All logger.
@@ -17,22 +17,41 @@ _LOGGER = logging.getLogger(__name__)
 def _find_value(html: str, label: str) -> str | None:
     """Return the value belonging to a table label."""
 
-    pattern = (
-        rf"<td[^>]*>\s*{re.escape(label)}\s*</td>"
-        rf"\s*<td[^>]*>\s*([^<]+)"
+    patterns = [
+        # normale tabel
+        rf"<td[^>]*>\s*{re.escape(label)}\s*</td>\s*"
+        rf"<td[^>]*>\s*([^<]+)",
+
+        # waarde in div (zoals Serial)
+        rf"<td[^>]*>\s*{re.escape(label)}\s*</td>\s*"
+        rf"<td[^>]*>.*?<div[^>]*>\s*([^<]+)",
+    ]
+
+    for pattern in patterns:
+        match = re.search(
+            pattern,
+            html,
+            re.IGNORECASE | re.DOTALL,
+        )
+
+        if match:
+            value = match.group(1).strip()
+
+            _LOGGER.debug(
+                "FOUND %s = %s",
+                label,
+                value,
+            )
+
+            return value
+
+    _LOGGER.warning(
+        "NOT FOUND: %s",
+        label,
     )
 
-    match = re.search(
-        pattern,
-        html,
-        re.IGNORECASE | re.DOTALL,
-    )
-
-    if not match:
-        return None
-
-    return match.group(1).strip()
-
+    return None
+	
 def _to_float(value: str | None) -> float | None:
     """Convert a value to float."""
 
@@ -40,22 +59,22 @@ def _to_float(value: str | None) -> float | None:
         return None
 
     value = (
-        value.replace("V", "")
-        .replace("A", "")
-        .replace("W", "")
+        value.replace("kWh", "")
         .replace("Hz", "")
-        .replace("C", "")
         .replace("Sec", "")
         .replace("hrs", "")
-        .replace("kWh", "")
+        .replace("V", "")
+        .replace("A", "")
+        .replace("W", "")
+        .replace("C", "")
         .strip()
     )
 
     try:
         return float(value)
     except ValueError:
+        _LOGGER.warning("FLOAT CONVERSION FAILED: %s", value)
         return None
-
 
 def _to_int(value: str | None) -> int | None:
     """Convert a value to integer."""
@@ -122,7 +141,7 @@ def parse_status(html: str) -> dict:
     #
     # Energy counters
     #
-    data["today"] = _to_float(_find_value(html, "ETODAY"))
+    #data["today"] = _to_float(_find_value(html, "ETODAY"))
     data["etotalh"] = _to_float(_find_value(html, "ETOTALH"))
     data["etotall"] = _to_float(_find_value(html, "ETOTALL"))
 
@@ -175,9 +194,17 @@ def parse_status(html: str) -> dict:
     data["mode_text"] = _mode_text(
         data["mode"]
     )
-    #  Debug hulp zie log file 
-    #_LOGGER.debug("Parsed status.htm: %s", data)
-    #_LOGGER.warning("Parsed status.htm: %s", data)
 
+    # Debug hulp zie log file
+    # _LOGGER.debug("Parsed status.htm: %s", data)
+    # _LOGGER.warning("Parsed status.htm: %s", data)
+
+    #LOGGER.warning(
+    #   "PARSED ENERGY H=%s L=%s",
+    #   data["etotalh"],
+    #   data["etotall"],
+    #
+
+    # _LOGGER.warning("STATUS PARSED = %s", data)
 
     return data

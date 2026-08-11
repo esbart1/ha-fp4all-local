@@ -1,8 +1,8 @@
 """
 FP4All Local for Home Assistant
 
-Version : 0.3
-Build   : 2.1.1
+Version : 0.4
+Build   : 3.0.0
 File    : history_parser.py
 
 History Parser .htm from the FP4All logger.

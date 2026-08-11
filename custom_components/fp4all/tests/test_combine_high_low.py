@@ -1,11 +1,11 @@
 """
 FP4All Local for Home Assistant
 
-Version : 0.3
-Build   : 2.6.2
+Version : 0.4
+Build   : 3.0.0
 File    : test_combine_high_low.py
 
-Tests for combine_high_low().
+Tests for combine_high_low()
 """
 
 from helpers.combine_high_low import combine_high_low

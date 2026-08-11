@@ -1,8 +1,8 @@
 """
 FP4All Local for Home Assistant
 
-Version : 0.3
-Build   : 2.5.5
+Version : 0.4
+Build   : 3.1.9
 File    : sensor.py
 
 Sensor platform for FP4All.
@@ -175,6 +175,14 @@ SENSORS = (
     ),
 
     (
+        "communication",
+        "Communication",
+        None,
+        None,
+        None,
+    ),
+
+    (
         "etotalh",
         "Energy Total High",
         "kWh",
@@ -240,12 +248,13 @@ SENSORS = (
     (
         "earned",
         "Lifetime Earnings",
+        "€",
         None,
         None,
-        None,		
-    ),	
-)
-#		"€",
+    ),
+
+    )
+#		
 ##
 async def async_setup_entry(
     hass: HomeAssistant,
@@ -281,7 +290,15 @@ class FP4AllSensor(
 
         self._key = key
 
-        self._attr_name = name
+#        self._attr_name = name
+        model = coordinator._model or "FP4All"
+        serial = coordinator._serial or ""
+
+        if serial:
+            suffix = serial[-4:]
+            self._attr_name = f"{model} ({suffix}) {name}"
+        else:
+            self._attr_name = f"{model} {name}"
 
         self._attr_unique_id = (
             f"{entry.entry_id}_{key}"
@@ -307,24 +324,33 @@ class FP4AllSensor(
             identifiers={
                 (DOMAIN, self._entry.entry_id)
             },
-            manufacturer=status.get(
-                "manufacturer",
-                MANUFACTURER,
+            manufacturer=(
+                status.get("manufacturer")
+                or self.coordinator._manufacturer
+                or MANUFACTURER
             ),
-            model=status.get(
-                "model",
-                "FP4All Logger",
+
+            model=(
+                status.get("model")
+                or self.coordinator._model
+                or "FP4All Logger"
             ),
-            sw_version=status.get(
-                "firmware",
+
+            sw_version=(
+                status.get("firmware")
+                or self.coordinator._firmware
             ),
-            serial_number=status.get(
-                "serial",
+
+            serial_number=(
+                status.get("serial")
+                or self.coordinator._serial
             ),
+
             name=self._entry.title,
             configuration_url=f"http://{self.coordinator.host}",
         )
 
+##
 #    @property
 #    def native_value(self):
 #        """Return sensor value."""
@@ -380,9 +406,11 @@ class FP4AllSensor(
         if self._key in (
             "total",
             "lifetime_generated",
-            "earned",
         ):
             return 1
+
+        if self._key == "earned":
+            return 2
 
         if self._key == "co2_saved":
             return 2
@@ -390,4 +418,3 @@ class FP4AllSensor(
         return None
 
 
-        return None		

@@ -1,25 +1,32 @@
-"""
-FP4All Local for Home Assistant
-
-Version : 0.3
-Build   : 2.0
-File    : const.py
-
-const platform for FP4All.
-"""
-from __future__ import annotations
-
 from datetime import timedelta
 
 DOMAIN = "fp4all"
 
 NAME = "FP4All Local"
 
-VERSION = "0.2.0"
+VERSION = "3.1.9"
 
 MANUFACTURER = "FP4All"
 
+#
+# Update interval
+#
+
+CONF_SCAN_INTERVAL = "scan_interval"
+
 DEFAULT_SCAN_INTERVAL = timedelta(seconds=30)
+
+UPDATE_INTERVALS = {
+    "Realtime": 1,
+    "10 seconds": 10,
+    "30 seconds": 30,
+    "1 minute": 60,
+    "5 minutes": 300,
+}
+
+#
+# Bestanden
+#
 
 STATUS_XML = "status.xml"
 STATUS_HTML = "status.htm"

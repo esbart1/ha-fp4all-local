@@ -1,5 +1,12 @@
-"""Download status.htm from the FP4All logger."""
+"""
+FP4All Local for Home Assistant
 
+Version : 0.4
+Build   : 3.1.1
+File    : status.py
+
+Download status.htm from the FP4All logger.
+"""
 from __future__ import annotations
 
 import logging
@@ -20,6 +27,13 @@ async def download_status(coordinator) -> str | None:
         async with session.get(url, timeout=10) as response:
             response.raise_for_status()
             html = await response.text()
+
+        _LOGGER.debug(
+            "Downloaded %d bytes from %s",
+            len(html),
+            coordinator.host,
+        )
+
 
     except Exception as err:
         _LOGGER.warning(
