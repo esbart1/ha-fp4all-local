@@ -4,11 +4,11 @@ All notable changes to **FP4All Local for Home Assistant** are documented here.
 
 ---
 
-# Version 3.1.9
+# Version 3.1.10
 
 ## Major improvements
 
-Version **3.1.9** is a significant improvement over the previous Build 2.6 release.
+Version **3.1.10** is a significant improvement over the previous Build 2.6 release.
 
 The main focus of this release is **local realtime operation, reliability and recovery when the FP4All logger is temporarily unavailable**.
 
@@ -161,7 +161,7 @@ Previous release.
 
 Version 2.6 provided the earlier FP4All Local integration and documentation.
 
-Version 3.1.9 builds on this version with improved:
+Version 3.1.10 builds on this version with improved:
 
 * local realtime operation;
 * communication handling;
@@ -174,7 +174,7 @@ Version 3.1.9 builds on this version with improved:
 
 # Notes
 
-Version 3.1.9 has been tested with multiple FP4All installations and with both normal operation and temporary loss of communication.
+Version 3.1.10 has been tested with multiple FP4All installations and with both normal operation and temporary loss of communication.
 
 Tested situations include:
 
@@ -192,7 +192,7 @@ Tested situations include:
 
 Before upgrading, make a backup of the existing Home Assistant configuration.
 
-Replace the existing `custom_components/fp4all` integration with the version from 3.1.9.
+Replace the existing `custom_components/fp4all` integration with the version from 3.1.10.
 
 Existing entity IDs are intended to remain unchanged.
 
@@ -209,6 +209,6 @@ After upgrading:
 
 # Version
 
-**FP4All Local 3.1.9**
+**FP4All Local 3.1.10**
 
 **Local · Realtime · No PVOutput required**
