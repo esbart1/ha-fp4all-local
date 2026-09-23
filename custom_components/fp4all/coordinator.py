@@ -73,6 +73,7 @@ class FP4AllCoordinator(DataUpdateCoordinator):
         #
         # Last valid dataset (used during temporary communication loss)
         #
+        self._last_good_data: dict = {}
         self._last_index: dict = {}
 
         #
