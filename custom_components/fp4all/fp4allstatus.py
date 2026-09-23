@@ -52,28 +52,3 @@ async def download_status(coordinator) -> str | None:
     )
 
     return html
-✅ v0.3 Build 1 (klaar)
-Realtime waarden
-VAC
-FAC
-status_parser
-DeviceInfo
-Juiste precisie
-
-
-
-
-🔜 v0.3 Build 2
-
-Nu gaan we de rest uit status.htm benutten.
-
-Extra sensoren:
-
-VPV Start
-Start Time
-Capacity
-VAC Min
-VAC Max
-FAC Min
-FAC Max
-Mode	
