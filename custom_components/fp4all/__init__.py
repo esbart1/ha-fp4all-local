@@ -2,7 +2,7 @@
 FP4All Local for Home Assistant
 
 Version : 0.4
-Build   : 3.1.9
+Build   : 3.1.10
 File    : __init__.py
 
 Home Assistant integration for FP4All.
