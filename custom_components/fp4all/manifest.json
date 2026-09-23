@@ -1,7 +1,9 @@
 {
   "domain": "fp4all",
   "name": "FP4All Local",
-  "codeowners": [],
+  "codeowners": [
+    "@esbart1"
+  ],
   "config_flow": true,
   "documentation": "https://github.com/esbart1/ha-fp4all-local",
   "iot_class": "local_polling",
