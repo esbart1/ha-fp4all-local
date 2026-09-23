@@ -14,6 +14,7 @@ import logging
 from homeassistant.core import HomeAssistant
 
 from .const import DOMAIN
+from .history import download_history
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -39,7 +40,7 @@ async def async_register_services(hass: HomeAssistant) -> None:
                 coordinator.host,
             )
 
-            await coordinator.async_update_history()
+            await download_history(coordinator)
 
         _LOGGER.warning("FP4All service gereed")
 
