@@ -4,7 +4,7 @@ DOMAIN = "fp4all"
 
 NAME = "FP4All Local"
 
-VERSION = "3.1.9"
+VERSION = "3.1.10"
 
 MANUFACTURER = "FP4All"
 
