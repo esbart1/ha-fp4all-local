@@ -1,4 +1,4 @@
-# Fp4all Home Assistant integration
+8# Fp4all Home Assistant integration
 
 Why this integration?
 
@@ -13,17 +13,19 @@ This is particularly useful for Home Assistant energy automations. The current s
 The integration was originally developed and tested with an older generation FP4All unit. The newer generation of FP4All units has not yet been tested because I do not have access to one of these units. Compatibility with newer hardware is therefore currently unconfirmed.
 
 
-Nederlandse beschrijving
+## Nederlandse beschrijving
 
 FP4All wordt gebruikt voor het monitoren van zonne-omvormers. Deze integratie maakt de lokaal beschikbare gegevens van de FP4All-unit rechtstreeks beschikbaar in Home Assistant.
 
-In plaats van de zonneproductie via een online dienst zoals PVOutput op te halen, maakt deze integratie rechtstreeks verbinding met de FP4All-unit via het lokale netwerk.
+In plaats van de zonneproductie via een online dienst zoals PVO
+utput op te halen, maakt deze integratie rechtstreeks verbinding met de FP4All-unit via het lokale netwerk.
 
 Daardoor zijn de actuele gegevens van de omvormer direct beschikbaar in Home Assistant. De updatefrequentie is afhankelijk van de instelling van de FP4All-software en kan variëren van realtime tot ongeveer iedere 5 minuten.
 
 Dit maakt de integratie bijzonder geschikt voor energie-automatiseringen in Home Assistant. De actuele zonneproductie kan bijvoorbeeld worden gebruikt om een laadpaal, warmtepomp, wasmachine of andere elektrische verbruiker aan te sturen wanneer er voldoende zonne-energie beschikbaar is.
 
 De integratie is oorspronkelijk ontwikkeld en getest met een oudere generatie FP4All-unit. De nieuwere generatie FP4All-units is nog niet getest, omdat ik daar zelf niet over beschik. De werking met deze nieuwere hardware is daarom op dit moment nog niet bevestigd.
+
 # Changelog
 
 All notable changes to **FP4All Local for Home Assistant** are documented here.
