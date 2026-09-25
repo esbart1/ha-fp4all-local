@@ -9,9 +9,11 @@ __pycache__/
 *.log
 *.tmp
 
+
 # Generated packages
 *.zip
 *.rar
+*.txt
 
 # Local editor/OS files
 .vscode/
