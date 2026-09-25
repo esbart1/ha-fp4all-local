@@ -1,3 +1,27 @@
+Why this integration?
+
+FP4All is used with solar inverter installations to monitor inverter data. This integration was created to make the locally available FP4All data directly usable in Home Assistant.
+
+Instead of retrieving solar production data through an online service such as PVOutput, this integration communicates directly with the FP4All logger over the local network.
+
+This makes the current inverter information available directly in Home Assistant. The update frequency depends on the FP4All configuration and can range from real-time updates to approximately every 5 minutes.
+
+This is particularly useful for Home Assistant energy automations. The current solar production can, for example, be used to control an EV charger, heat pump, washing machine or other electrical loads when sufficient solar power is available.
+
+The integration was originally developed and tested with an older generation FP4All unit. The newer generation of FP4All units has not yet been tested because I do not have access to one of these units. Compatibility with newer hardware is therefore currently unconfirmed.
+
+
+Nederlandse beschrijving
+
+FP4All wordt gebruikt voor het monitoren van zonne-omvormers. Deze integratie maakt de lokaal beschikbare gegevens van de FP4All-unit rechtstreeks beschikbaar in Home Assistant.
+
+In plaats van de zonneproductie via een online dienst zoals PVOutput op te halen, maakt deze integratie rechtstreeks verbinding met de FP4All-unit via het lokale netwerk.
+
+Daardoor zijn de actuele gegevens van de omvormer direct beschikbaar in Home Assistant. De updatefrequentie is afhankelijk van de instelling van de FP4All-software en kan variëren van realtime tot ongeveer iedere 5 minuten.
+
+Dit maakt de integratie bijzonder geschikt voor energie-automatiseringen in Home Assistant. De actuele zonneproductie kan bijvoorbeeld worden gebruikt om een laadpaal, warmtepomp, wasmachine of andere elektrische verbruiker aan te sturen wanneer er voldoende zonne-energie beschikbaar is.
+
+De integratie is oorspronkelijk ontwikkeld en getest met een oudere generatie FP4All-unit. De nieuwere generatie FP4All-units is nog niet getest, omdat ik daar zelf niet over beschik. De werking met deze nieuwere hardware is daarom op dit moment nog niet bevestigd.
 # Changelog
 
 All notable changes to **FP4All Local for Home Assistant** are documented here.
