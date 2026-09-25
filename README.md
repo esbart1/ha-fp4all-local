@@ -1,4 +1,4 @@
-8# Fp4all Home Assistant integration
+## Fp4all Home Assistant integration
 
 Why this integration?
 
