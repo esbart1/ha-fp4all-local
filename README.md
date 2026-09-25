@@ -17,8 +17,7 @@ The integration was originally developed and tested with an older generation FP4
 
 FP4All wordt gebruikt voor het monitoren van zonne-omvormers. Deze integratie maakt de lokaal beschikbare gegevens van de FP4All-unit rechtstreeks beschikbaar in Home Assistant.
 
-In plaats van de zonneproductie via een online dienst zoals PVO
-utput op te halen, maakt deze integratie rechtstreeks verbinding met de FP4All-unit via het lokale netwerk.
+In plaats van de zonneproductie via een online dienst zoals PVOutput op te halen, maakt deze integratie rechtstreeks verbinding met de FP4All-unit via het lokale netwerk.
 
 Daardoor zijn de actuele gegevens van de omvormer direct beschikbaar in Home Assistant. De updatefrequentie is afhankelijk van de instelling van de FP4All-software en kan variëren van realtime tot ongeveer iedere 5 minuten.
 
