@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 
 # Home Assistant runtime data
-
+ 
 
 # Local/runtime files
 *.log
