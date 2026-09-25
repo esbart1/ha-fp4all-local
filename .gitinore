@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 
 # Home Assistant runtime data
-custom_components/smartalarm/alarm_cache/
+
 
 # Local/runtime files
 *.log
@@ -11,6 +11,7 @@ custom_components/smartalarm/alarm_cache/
 
 # Generated packages
 *.zip
+*.rar
 
 # Local editor/OS files
 .vscode/
