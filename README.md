@@ -1,3 +1,5 @@
+Fp4all Home Assistant integration
+
 Why this integration?
 
 FP4All is used with solar inverter installations to monitor inverter data. This integration was created to make the locally available FP4All data directly usable in Home Assistant.
