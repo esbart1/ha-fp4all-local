@@ -232,8 +232,6 @@ After upgrading:
 5. Check the communication sensor.
 6. Confirm that existing dashboards and automations still use the same entity IDs.
 
-# Support
-Please use the GitHub Issues section for bug reports and feature requests.
 ---
 
 # Version
