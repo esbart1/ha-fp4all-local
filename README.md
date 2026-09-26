@@ -234,7 +234,6 @@ After upgrading:
 
 # Support
 
-Please use the GitHub Issues section for bug reports and feature requests.
 ---
 
 # Version
