@@ -390,6 +390,6 @@ After upgrading:
 
 # Version
 
-**FP4All Local 3.1.10**
+**FP4All Local
 
 **Local · Realtime · No PVOutput required**
