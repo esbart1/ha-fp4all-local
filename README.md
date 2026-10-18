@@ -70,6 +70,21 @@ Ensure that your FP4All logger is accessible on your local network.
 
 If the integration cannot connect, check the logger's network connection and local accessibility, then review the Home Assistant logs for relevant errors.
 
+### Configuration
+
+1. Open **Settings → Devices & services** in Home Assistant.
+2. Select **Add integration** and search for **FP4All Local**.
+3. Enter the IP address of your FP4All logger.
+4. After setup, open the integration's options to configure the update interval.
+
+Available update intervals:
+
+- Realtime — 1 second
+- 10 seconds
+- 30 seconds (default)
+- 1 minute
+- 5 minutes
+
 ## Support
 
 - [Report a bug or request help](https://github.com/esbart1/ha-fp4all-local/issues)
@@ -141,6 +156,21 @@ Na installatie en herstart:
 Zorg ervoor dat de FP4All-unit bereikbaar is via je lokale netwerk.
 
 Lukt de verbinding niet? Controleer dan de netwerkverbinding en lokale bereikbaarheid van de unit. Bekijk zo nodig ook de Home Assistant-logboeken op relevante foutmeldingen.
+
+### Configuratie
+
+1. Open **Instellingen → Apparaten en diensten** in Home Assistant.
+2. Kies **Integratie toevoegen** en zoek naar **FP4All Local**.
+3. Vul het IP-adres van je FP4All-unit in.
+4. Open na de installatie de opties van de integratie om de updatefrequentie in te stellen.
+
+Beschikbare updatefrequenties:
+
+- Realtime — 1 seconde
+- 10 seconden
+- 30 seconden (standaard)
+- 1 minuut
+- 5 minuten
 
 ## Ondersteuning
 
