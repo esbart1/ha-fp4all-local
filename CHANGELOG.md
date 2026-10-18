@@ -2,6 +2,11 @@
 
 All notable changes to FP4All Local are documented in this file.
 
+## [3.1.11]
+
+- Documentation cleanup: remove duplicated and outdated release notes from README.md and link to this changelog.
+- Release-preparation update only; no intended functional changes.
+
 ## [3.1.10]
 
 - HACS release-only update to address the timing/order of HACS release steps.
