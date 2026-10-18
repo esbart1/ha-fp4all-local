@@ -59,25 +59,24 @@ Make a backup of your Home Assistant configuration before replacing an existing 
 
 ## Configuration
 
-After installation and restart:
+After installing FP4All Local and restarting Home Assistant:
 
-1. Open **Settings → Devices & services** in Home Assistant.
+1. Open **Settings → Devices & services**.
 2. Select **Add integration**.
 3. Search for **FP4All Local**.
-4. Follow the configuration flow and enter the information requested by the integration.
+4. Enter the IP address of your FP4All logger.
 
-Ensure that your FP4All logger is accessible on your local network.
+![Enter the IP address of the FP4All logger](screenshots/setup-ip-address.png)
 
-If the integration cannot connect, check the logger's network connection and local accessibility, then review the Home Assistant logs for relevant errors.
+Make sure the logger is reachable over your local network. If the integration cannot connect, check the logger's network connection and review the Home Assistant logs for relevant errors.
 
-### Configuration
+### Update interval
 
-1. Open **Settings → Devices & services** in Home Assistant.
-2. Select **Add integration** and search for **FP4All Local**.
-3. Enter the IP address of your FP4All logger.
-4. After setup, open the integration's options to configure the update interval.
+Open the options for the FP4All Local integration to select the update interval.
 
-Available update intervals:
+![Select the update interval](screenshots/scan-interval-selection.png)
+
+Available intervals:
 
 - Realtime — 1 second
 - 10 seconds
@@ -146,25 +145,24 @@ Maak een back-up van je Home Assistant-configuratie voordat je een bestaande ins
 
 ## Configuratie
 
-Na installatie en herstart:
+Na installatie van FP4All Local en een herstart van Home Assistant:
 
-1. Open **Instellingen → Apparaten en diensten** in Home Assistant.
+1. Open **Instellingen → Apparaten en diensten**.
 2. Kies **Integratie toevoegen**.
 3. Zoek naar **FP4All Local**.
-4. Volg de configuratiewizard en vul de gevraagde gegevens in.
+4. Vul het IP-adres van je FP4All-unit in.
 
-Zorg ervoor dat de FP4All-unit bereikbaar is via je lokale netwerk.
+![Vul het IP-adres van de FP4All-unit in](screenshots/setup-ip-address.png)
 
-Lukt de verbinding niet? Controleer dan de netwerkverbinding en lokale bereikbaarheid van de unit. Bekijk zo nodig ook de Home Assistant-logboeken op relevante foutmeldingen.
+Zorg ervoor dat de FP4All-unit bereikbaar is via je lokale netwerk. Lukt de verbinding niet? Controleer dan de netwerkverbinding en bekijk zo nodig de Home Assistant-logboeken op relevante foutmeldingen.
 
-### Configuratie
+### Updatefrequentie
 
-1. Open **Instellingen → Apparaten en diensten** in Home Assistant.
-2. Kies **Integratie toevoegen** en zoek naar **FP4All Local**.
-3. Vul het IP-adres van je FP4All-unit in.
-4. Open na de installatie de opties van de integratie om de updatefrequentie in te stellen.
+Open de opties van de FP4All Local-integratie om de updatefrequentie te kiezen.
 
-Beschikbare updatefrequenties:
+![Kies de updatefrequentie](screenshots/scan-interval-selection.png)
+
+Beschikbare intervallen:
 
 - Realtime — 1 seconde
 - 10 seconden
@@ -181,13 +179,6 @@ Beschikbare updatefrequenties:
 ---
 
 <a id="changelog"></a>
-# Changelog
-
-All notable changes to **FP4All Local for Home Assistant** are documented below.
-
-<!-- Keep the existing version history below this line. -->
-
-
 # Changelog
 
 All notable changes to **FP4All Local for Home Assistant** are documented here.
