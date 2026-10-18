@@ -2,12 +2,17 @@
 
 All notable changes to FP4All Local are documented in this file.
 
-## [3.1.10] - Current release
+## [3.1.10]
+
+- HACS release-only update to address the timing/order of HACS release steps.
+- No functional changes compared with version 3.1.9.
+
+## [3.1.9]
 
 ### Added
-- Automatic, more recognizable sensor Friendly Names using available logger and inverter information.
-- A communication status sensor with `Connected` and `Communication lost` states.
+- Communication status reporting, including `Connected` and `Communication lost` states.
 - Local cache support to retain the last valid sensor data for each logger.
+- Automatic, more recognizable sensor Friendly Names using available logger and inverter information.
 
 ### Improved
 - Recovery after temporary network or logger communication loss.
@@ -20,10 +25,9 @@ All notable changes to FP4All Local are documented in this file.
 - Existing entity IDs are intended to remain unchanged when Friendly Names are improved.
 - The cache uses one file per logger; the additional manufacturer/model/serial cache file is no longer required.
 
-## [2.6] - Previous release
+## [2.6]
 
 - Previous generation of the FP4All Local integration.
-- Version 3.1.10 builds on this release with improvements to local monitoring, communication recovery, caching, sensor persistence, and Friendly Names.
 
 ---
 
