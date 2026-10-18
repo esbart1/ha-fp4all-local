@@ -2,7 +2,7 @@
 
 **Monitor your FP4All solar inverter locally in Home Assistant — without requiring PVOutput or a cloud service for local monitoring.**
 
-[English](#english) · [Nederlands](#nederlands) · [Installation](#installation) · [Configuration](#configuration) · [Changelog](#changelog) · [Support](#support)
+[🇬🇧 English](#english) · [🇳🇱 Nederlands](#nederlands) · [Installation](#installation) · [Configuration](#configuration) · [Changelog](#changelog) · [Support](#support)
 
 ---
 
