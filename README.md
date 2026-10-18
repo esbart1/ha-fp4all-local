@@ -388,8 +388,8 @@ After upgrading:
 
 ---
 
-# Version
+# About
 
-**FP4All Local
+**FP4All Local**
 
 **Local · Realtime · No PVOutput required**
