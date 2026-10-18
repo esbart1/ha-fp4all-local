@@ -1,29 +1,162 @@
-## Fp4all-local  Home Assistant integration
+# FP4All Local — Home Assistant Integration
 
-Why this integration?
+**Monitor your FP4All solar inverter locally in Home Assistant — without requiring PVOutput or a cloud service for local monitoring.**
 
-FP4All is used with solar inverter installations to monitor inverter data. This integration was created to make the locally available FP4All data directly usable in Home Assistant.
+[English](#english) · [Nederlands](#nederlands) · [Installation](#installation) · [Configuration](#configuration) · [Changelog](#changelog) · [Support](#support)
 
-Instead of retrieving solar production data through an online service such as PVOutput, this integration communicates directly with the FP4All logger over the local network.
+---
 
-This makes the current inverter information available directly in Home Assistant. The update frequency depends on the FP4All configuration and can range from real-time updates to approximately every 5 minutes.
+<a id="english"></a>
+## English
 
-This is particularly useful for Home Assistant energy automations. The current solar production can, for example, be used to control an EV charger, heat pump, washing machine or other electrical loads when sufficient solar power is available.
+FP4All Local is a custom integration for [Home Assistant](https://www.home-assistant.io/) that reads locally available data from an FP4All logger over your local network.
 
-The integration was originally developed and tested with an older generation FP4All unit. The newer generation of FP4All units has not yet been tested because I do not have access to one of these units. Compatibility with newer hardware is therefore currently unconfirmed.
+The integration makes inverter information available to Home Assistant and can help you build energy automations based on solar production. For example, you can use solar production data to control an EV charger, heat pump, washing machine or other electrical loads.
 
+### Features
 
-## Nederlandse beschrijving
+- Direct communication with the FP4All logger over the local network.
+- Local monitoring without requiring PVOutput for this integration.
+- Inverter and energy information exposed as Home Assistant sensors.
+- Retention of the last valid sensor values during temporary communication problems.
+- Improved recovery after network interruptions and Home Assistant restarts.
+- Friendly sensor names while preserving existing entity IDs where applicable.
 
-FP4All wordt gebruikt voor het monitoren van zonne-omvormers. Deze integratie maakt de lokaal beschikbare gegevens van de FP4All-unit rechtstreeks beschikbaar in Home Assistant.
+**Hardware compatibility:** The integration was originally developed and tested with an older generation FP4All unit. Compatibility with newer generations has not yet been confirmed.
 
-In plaats van de zonneproductie via een online dienst zoals PVOutput op te halen, maakt deze integratie rechtstreeks verbinding met de FP4All-unit via het lokale netwerk.
+## Installation
 
-Daardoor zijn de actuele gegevens van de omvormer direct beschikbaar in Home Assistant. De updatefrequentie is afhankelijk van de instelling van de FP4All-software en kan variëren van realtime tot ongeveer iedere 5 minuten.
+### Option 1 — HACS
 
-Dit maakt de integratie bijzonder geschikt voor energie-automatiseringen in Home Assistant. De actuele zonneproductie kan bijvoorbeeld worden gebruikt om een laadpaal, warmtepomp, wasmachine of andere elektrische verbruiker aan te sturen wanneer er voldoende zonne-energie beschikbaar is.
+Once FP4All Local is available in the HACS default store:
 
-De integratie is oorspronkelijk ontwikkeld en getest met een oudere generatie FP4All-unit. De nieuwere generatie FP4All-units is nog niet getest, omdat ik daar zelf niet over beschik. De werking met deze nieuwere hardware is daarom op dit moment nog niet bevestigd.
+1. Open **HACS** in Home Assistant.
+2. Search for **FP4All Local**.
+3. Open the integration and select **Download**.
+4. Restart Home Assistant if requested.
+5. Continue with the configuration instructions below.
+
+If the repository is not yet listed in the HACS default store, you may be able to add it as a custom repository in HACS, using the repository URL:
+
+`https://github.com/esbart1/ha-fp4all-local`
+
+Select **Integration** as the repository category.
+
+See the [official HACS documentation](https://www.hacs.xyz/docs/use/repositories/dashboard/) for details.
+
+### Option 2 — Manual installation
+
+1. Download or clone this repository.
+2. Copy the `custom_components/fp4all` directory into the `custom_components` directory of your Home Assistant configuration.
+3. Check that the integration files are located in:
+
+   `config/custom_components/fp4all/`
+
+4. Restart Home Assistant.
+5. Continue with the configuration instructions below.
+
+Make a backup of your Home Assistant configuration before replacing an existing installation.
+
+## Configuration
+
+After installation and restart:
+
+1. Open **Settings → Devices & services** in Home Assistant.
+2. Select **Add integration**.
+3. Search for **FP4All Local**.
+4. Follow the configuration flow and enter the information requested by the integration.
+
+Ensure that your FP4All logger is accessible on your local network.
+
+If the integration cannot connect, check the logger's network connection and local accessibility, then review the Home Assistant logs for relevant errors.
+
+## Support
+
+- [Report a bug or request help](https://github.com/esbart1/ha-fp4all-local/issues)
+- [View the source code](https://github.com/esbart1/ha-fp4all-local)
+- [Home Assistant documentation](https://www.home-assistant.io/docs/)
+
+---
+
+<a id="nederlands"></a>
+## Nederlands
+
+FP4All Local is een custom integratie voor [Home Assistant](https://www.home-assistant.io/) die lokaal beschikbare gegevens van een FP4All-unit via het eigen netwerk uitleest.
+
+De integratie maakt informatie over de omvormer beschikbaar als sensoren in Home Assistant. Daarmee kun je energie-automatiseringen maken op basis van de actuele zonneproductie. Denk bijvoorbeeld aan het aansturen van een laadpaal, warmtepomp, wasmachine of andere elektrische verbruikers wanneer er voldoende zonne-energie beschikbaar is.
+
+### Mogelijkheden
+
+- Rechtstreekse communicatie met de FP4All-unit via het lokale netwerk.
+- Lokale monitoring zonder dat PVOutput voor deze integratie nodig is.
+- Omvormer- en energiegegevens als Home Assistant-sensoren.
+- Behoud van de laatst geldige sensorwaarden bij tijdelijke communicatieproblemen.
+- Verbeterd herstel na netwerkonderbrekingen en herstarts van Home Assistant.
+- Verbeterde, herkenbare sensornamen met behoud van bestaande entity-ID's waar van toepassing.
+
+**Hardwarecompatibiliteit:** De integratie is oorspronkelijk ontwikkeld en getest met een oudere generatie FP4All-unit. De werking met nieuwere generaties is nog niet bevestigd.
+
+## Installatie
+
+### Optie 1 — HACS
+
+Zodra FP4All Local beschikbaar is in de standaardlijst van HACS:
+
+1. Open **HACS** in Home Assistant.
+2. Zoek naar **FP4All Local**.
+3. Open de integratie en selecteer **Download**.
+4. Herstart Home Assistant als daarom wordt gevraagd.
+5. Volg daarna de configuratiestappen hieronder.
+
+Staat de integratie nog niet in de standaardlijst, dan kun je de repository mogelijk als aangepaste repository aan HACS toevoegen met deze URL:
+
+`https://github.com/esbart1/ha-fp4all-local`
+
+Kies als categorie **Integration**.
+
+Bekijk de [officiële HACS-documentatie](https://www.hacs.xyz/docs/use/repositories/dashboard/) voor meer informatie.
+
+### Optie 2 — Handmatige installatie
+
+1. Download of clone deze repository.
+2. Kopieer de map `custom_components/fp4all` naar de map `custom_components` in je Home Assistant-configuratie.
+3. Controleer of de integratiebestanden staan in:
+
+   `config/custom_components/fp4all/`
+
+4. Herstart Home Assistant.
+5. Volg daarna de configuratiestappen hieronder.
+
+Maak een back-up van je Home Assistant-configuratie voordat je een bestaande installatie vervangt.
+
+## Configuratie
+
+Na installatie en herstart:
+
+1. Open **Instellingen → Apparaten en diensten** in Home Assistant.
+2. Kies **Integratie toevoegen**.
+3. Zoek naar **FP4All Local**.
+4. Volg de configuratiewizard en vul de gevraagde gegevens in.
+
+Zorg ervoor dat de FP4All-unit bereikbaar is via je lokale netwerk.
+
+Lukt de verbinding niet? Controleer dan de netwerkverbinding en lokale bereikbaarheid van de unit. Bekijk zo nodig ook de Home Assistant-logboeken op relevante foutmeldingen.
+
+## Ondersteuning
+
+- [Een probleem melden of hulp vragen](https://github.com/esbart1/ha-fp4all-local/issues)
+- [De broncode bekijken](https://github.com/esbart1/ha-fp4all-local)
+- [Home Assistant-documentatie](https://www.home-assistant.io/docs/)
+
+---
+
+<a id="changelog"></a>
+# Changelog
+
+All notable changes to **FP4All Local for Home Assistant** are documented below.
+
+<!-- Keep the existing version history below this line. -->
+
 
 # Changelog
 
