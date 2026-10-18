@@ -7,7 +7,7 @@
 ---
 
 <a id="english"></a>
-## English
+## 🇬🇧 English
 
 FP4All Local is a custom integration for [Home Assistant](https://www.home-assistant.io/) that reads locally available data from an FP4All logger over your local network.
 
@@ -79,7 +79,7 @@ If the integration cannot connect, check the logger's network connection and loc
 ---
 
 <a id="nederlands"></a>
-## Nederlands
+## 🇳🇱 Nederlands
 
 FP4All Local is een custom integratie voor [Home Assistant](https://www.home-assistant.io/) die lokaal beschikbare gegevens van een FP4All-unit via het eigen netwerk uitleest.
 
