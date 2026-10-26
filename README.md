@@ -113,7 +113,6 @@ De apparaatinformatie toont onder andere het type, de firmwareversie van de FP4A
 
 ### 3. Aanvullende sensorinformatie
 
-`screenshots/sensoreninfo1.png`
 
 ![Aanvullende FP4All Local sensorinformatie](screenshots/sensoreninfo1.png)
 
