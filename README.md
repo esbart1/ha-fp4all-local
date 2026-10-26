@@ -37,6 +37,8 @@ Dit lukt normaal gesproken overdag, wanneer de omvormer actief is (meestal tusse
 
 ### Via HACS
 
+Als FP4All Local beschikbaar is in de standaardlijst van HACS:
+
 1. Open HACS in Home Assistant.
 2. Zoek naar **FP4All Local**. Als de integratie nog niet in jouw HACS-overzicht staat, voeg dan de repository als custom repository toe met categorie **Integration**.
 3. Installeer FP4All Local.
@@ -215,9 +217,12 @@ This is normally during daylight hours, when the inverter is active (usually bet
 - Communication status indicates when the logger is unavailable and when communication is restored.
 - Cache data is stored using Home Assistant Storage (`.storage`), not in a cache directory inside the integration folder.
 
+<a id="installation"></a>
 ## Installation
 
 ### Via HACS
+
+If FP4All Local is available in the HACS default store:
 
 1. Open HACS in Home Assistant.
 2. Search for **FP4All Local**. If it is not listed in your HACS view, add the repository as a custom repository with category **Integration**.
@@ -236,9 +241,14 @@ This is normally during daylight hours, when the inverter is active (usually bet
    `config/custom_components/fp4all/`
 4. Verify that `manifest.json` is directly inside that directory.
 5. Restart Home Assistant.
+
+<a id="configuration"></a>
+## Configuration
+
 6. Add **FP4All Local** via **Settings → Devices & services → Add integration** and enter the logger's local IP address.
 
 Before upgrading, create a backup. Carefully replace the existing integration directory. Do not manually delete Home Assistant `.storage` data.
+
 
 ## Step-by-step configuration
 
