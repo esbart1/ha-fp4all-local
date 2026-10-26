@@ -99,7 +99,6 @@ De voorbeeldwaarde is uitsluitend ter illustratie.
 
 ### 1. Hoofdoverzicht en loggers toevoegen
 
-`screenshots/sensorenmain.png`
 
 ![FP4All Local sensorenoverzicht en configuratie](screenshots/sensorenmain.png)
 
@@ -107,7 +106,6 @@ Deze afbeelding toont de FP4All-sensoren in Home Assistant en het scherm waarmee
 
 ### 2. Apparaat- en sensorinformatie
 
-`screenshots/sensoreninfo.png`
 
 ![FP4All Local apparaatinformatie en sensorinformatie](screenshots/sensoreninfo.png)
 
