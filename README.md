@@ -3,7 +3,7 @@
 **Lokale, realtime Home Assistant-integratie voor FP4All PV-omvormerloggers — geen PVOutput vereist.**
 
 
-[🇬🇧 English](#english) · [🇳🇱 Nederlands](#nederlands) · [Installation](#installation) · [Configuration](#configuration) · [Changelog](CHANGELOG.md) · [Support](#support)
+[🇬🇧 English](#english) · [🇳🇱 Nederlands](#nederlands) · [Installation](#installation) · [Configuration](#configuration) · [Changelog](CHANGELOG.md) 
 
 
 <a id="nederlands"></a>
