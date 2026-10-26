@@ -106,13 +106,11 @@ Deze afbeelding toont de FP4All-sensoren in Home Assistant en het scherm waarmee
 
 ### 2. Apparaat- en sensorinformatie
 
-
 ![FP4All Local apparaatinformatie en sensorinformatie](screenshots/sensoreninfo.png)
 
 De apparaatinformatie toont onder andere het type, de firmwareversie van de FP4All-logger en het serienummer van de omvormer. De herkenbare naam kan het omvormertype en de laatste vier cijfers van het serienummer bevatten.
 
 ### 3. Aanvullende sensorinformatie
-
 
 ![Aanvullende FP4All Local sensorinformatie](screenshots/sensoreninfo1.png)
 
