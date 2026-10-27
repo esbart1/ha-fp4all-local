@@ -129,6 +129,16 @@ Wanneer de verbinding terugkeert, haalt de integratie opnieuw actuele gegevens o
 
 De cache helpt bij tijdelijk communicatieverlies en bij een herstart van Home Assistant. De opgeslagen waarden zijn laatst bekende waarden en hoeven dus niet de actuele fysieke situatie weer te geven zolang communicatie ontbreekt.
 
+## Voorbeelden van meetgegevens en grafieken
+In de map screenshots staan voorbeelden van meetgegevens en daggrafieken van de installatie.
+
+Deze voorbeelden tonen onder andere:
+- Stroom
+- Vermogen
+- DC-spanning van de omvormer
+
+De grafieken geven een indruk van de beschikbare meetgegevens en hoe deze in Home Assistant kunnen worden weergegeven. De daadwerkelijke grafieken en historische gegevens zijn afhankelijk van de beschikbare sensoren, recorder-instellingen en de configuratie van Home Assistant.
+
 ## Opslag
 
 Vanaf versie 3.1.12 gebruikt FP4All Local Home Assistant Storage (`.storage`) voor het bewaren van cachegegevens. De integratie gebruikt daarvoor de opslagvoorziening van Home Assistant. Cachebestanden worden niet langer als onderdeel van de integratiemap bijgehouden.
@@ -314,6 +324,17 @@ When the FP4All logger is temporarily unavailable:
 When communication returns, the integration retrieves current data and restores the communication state.
 
 The cache helps during temporary communication loss and Home Assistant restarts. Cached values are the last known values and may not represent the current physical situation while communication is unavailable.
+
+
+## Examples of measurements and graphs
+
+The screenshots folder contains examples of measurements and daily graphs from the installation.
+These examples include:
+- Current
+- Power
+- DC voltage of the inverter
+
+The graphs provide an impression of the available measurements and how they can be displayed in Home Assistant. The actual graphs and historical data depend on the available sensors, recorder settings and Home Assistant configuration.
 
 ## Storage
 
