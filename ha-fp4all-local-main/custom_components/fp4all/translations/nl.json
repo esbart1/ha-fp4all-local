@@ -1,0 +1,25 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "FP4All Local",
+        "description": "Maak verbinding met een FP4All logger in het lokale netwerk.",
+        "data": {
+          "host": "IP-adres"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan geen verbinding maken met de FP4All logger."
+    },
+    "abort": {
+      "already_configured": "Deze FP4All logger is al geconfigureerd."
+    }
+  },
+  "services": {
+    "download_history": {
+      "name": "Historie downloaden",
+      "description": "Download de historiepagina (daysview.htm) van alle geconfigureerde FP4All loggers."
+    }
+  }
+}
