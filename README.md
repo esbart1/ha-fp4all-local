@@ -75,6 +75,7 @@ Vul het lokale IP-adres in van de FP4All-logger die je aan Home Assistant wilt t
 Selecteer het gewenste scan-interval voor het ophalen van gegevens bij de logger. Een korter interval haalt vaker gegevens op; houd rekening met de mogelijkheden en belasting van de logger. De beschikbare keuzes worden bepaald door de integratieversie.
 
 ![Selecteren van het scan-interval](screenshots/scan-interval-selection.png)
+
 ## Meerdere FP4All-loggers
 
 Je kunt meerdere FP4All-loggers toevoegen via het configuratiescherm van de integratie. Voeg iedere logger afzonderlijk toe met het bijbehorende lokale IP-adres.
@@ -99,7 +100,6 @@ De voorbeeldwaarde is uitsluitend ter illustratie.
 
 ### 1. Hoofdoverzicht en loggers toevoegen
 
-
 ![FP4All Local sensorenoverzicht en configuratie](screenshots/systeminfo.png)
 
 Deze afbeelding toont de FP4All-sensoren in Home Assistant en het scherm waarmee je eventueel extra FP4All-loggers kunt toevoegen.
@@ -115,6 +115,7 @@ De apparaatinformatie toont onder andere het type, de firmwareversie van de FP4A
 ![Aanvullende FP4All Local sensorinformatie](screenshots/sensoreninfo1.png)
 
 Deze tweede afbeelding vult de sensorinformatie aan die niet op één afbeelding paste.
+
 
 ## Communicatieverlies en herstel
 
@@ -133,6 +134,7 @@ De cache helpt bij tijdelijk communicatieverlies en bij een herstart van Home As
 Vanaf versie 3.1.12 gebruikt FP4All Local Home Assistant Storage (`.storage`) voor het bewaren van cachegegevens. De integratie gebruikt daarvoor de opslagvoorziening van Home Assistant. Cachebestanden worden niet langer als onderdeel van de integratiemap bijgehouden.
 
 Maak bij updates altijd eerst een back-up. Verwijder of bewerk bestanden in `.storage` niet handmatig.
+
 
 ## Teststatus en hardwarecompatibiliteit
 
@@ -283,23 +285,19 @@ The value is illustrative only.
 
 ### 1. Sensor overview and adding loggers
 
-`screenshots/sensorenmain.png`
 
-![FP4All Local sensor overview and configuration](screenshots/sensorenmain.png)
+![FP4All Local sensorenoverzicht en configuratie](screenshots/systeminfo.png)
 
 This image shows the FP4All sensors in Home Assistant and the screen used to add additional FP4All loggers.
 
 ### 2. Device and sensor information
 
-`screenshots/sensoreninfo.png`
 
 ![FP4All Local device information and sensor details](screenshots/sensoreninfo.png)
 
 Device information may include the inverter type, FP4All logger firmware version, and inverter serial number. Readable names can include the inverter type and the last four serial digits.
 
 ### 3. Additional sensor information
-
-`screenshots/sensoreninfo1.png`
 
 ![Additional FP4All Local sensor information](screenshots/sensoreninfo1.png)
 
