@@ -1,0 +1,25 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "FP4All Local",
+        "description": "Connect to an FP4All logger on your local network.",
+        "data": {
+          "host": "IP address"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the FP4All logger."
+    },
+    "abort": {
+      "already_configured": "This FP4All logger is already configured."
+    }
+  },
+  "services": {
+    "download_history": {
+      "name": "Download history",
+      "description": "Download the history page (daysview.htm) from all configured FP4All loggers."
+    }
+  }
+}
