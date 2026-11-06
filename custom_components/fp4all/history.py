@@ -5,7 +5,7 @@ Version : 0.4
 Build   : 3.0.0
 File    : history.py
 
-Sensor platform for FP4All.
+History handling for FP4All Local.
 """
 from __future__ import annotations
 
@@ -18,6 +18,16 @@ from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from .const import HISTORY_FOLDER, HISTORY_HTML
 
 _LOGGER = logging.getLogger(__name__)
+
+
+def _write_history_file(
+    history_dir: Path,
+    filename: Path,
+    content: str,
+) -> None:
+    """Write the downloaded history HTML to disk."""
+    history_dir.mkdir(exist_ok=True)
+    filename.write_text(content, encoding="utf-8")
 
 
 async def download_history(coordinator) -> None:
@@ -50,15 +60,15 @@ async def download_history(coordinator) -> None:
         coordinator.hass.config.path(HISTORY_FOLDER)
     )
 
-    history_dir.mkdir(exist_ok=True)
-
     filename = history_dir / (
         coordinator.host.replace(".", "_") + ".html"
     )
 
-    filename.write_text(
+    await coordinator.hass.async_add_executor_job(
+        _write_history_file,
+        history_dir,
+        filename,
         html,
-        encoding="utf-8",
     )
 
     _LOGGER.info("Saved : %s", filename)
