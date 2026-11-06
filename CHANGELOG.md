@@ -2,6 +2,16 @@
 
 All notable changes to FP4All Local are documented in this file.
 
+## [3.1.13]
+
+### English
+
+- Moved history directory creation and file writing to Home Assistant's executor to prevent blocking the event loop.
+
+### Nederlands
+
+- Het aanmaken van de geschiedenismap en het schrijven van geschiedenisbestanden verplaatst naar de executor van Home Assistant. Hierdoor wordt het event loop niet geblokkeerd door bestandsbewerkingen.
+
 ## [3.1.12]
 
 ### English
