@@ -150,15 +150,20 @@ Maak bij updates altijd eerst een back-up. Verwijder of bewerk bestanden in `.st
 
 De integratie is oorspronkelijk ontwikkeld en getest met een oudere generatie FP4All-unit.
 
-Versie 3.1.12 is door de maintainer getest met de beschikbare installaties, waaronder:
+** Versie 3.1.13 is door de maintainer getest met de beschikbare installaties, waaronder:
 
-- bestaande installaties met meerdere loggers;
-- normale uitlezing van beide omvormers;
-- opslag en herstel van cachegegevens;
-- herstart van Home Assistant;
-- tijdelijk communicatieverlies en herstel;
-- een nieuwe integratie-installatie;
-- controle van het logboek, zonder gemelde fouten tijdens deze tests.
+- Bestaande installaties met meerdere loggers.
+- Normale uitlezing van beide omvormers.
+- Opslag en herstel van cachegegevens.
+- Herstart van Home Assistant.
+- Tijdelijk communicatieverlies en automatisch herstel.
+- Een nieuwe integratie-installatie.
+- Controle van het logboek, zonder gemelde fouten tijdens deze tests.
+
+** Verbeteringen in versie 3.1.13
+
+- Geschiedenisbestanden worden nu buiten de Home Assistant event loop verwerkt. Hierdoor wordt de werking van Home Assistant niet geblokkeerd door bestandsbewerkingen.
+- Opslag en herstel van geschiedenisgegevens zijn getest.s.
 
 **Nieuwere generaties FP4All-loggers zijn niet afzonderlijk getest.** De webpagina's en bediening lijken op basis van visuele vergelijking sterk op die van de geteste generatie, maar dat is op zichzelf geen bewijs van compatibiliteit. De werking op nieuwere hardware blijft daarom onbevestigd totdat iemand die uitvoering daadwerkelijk test.
 
@@ -189,9 +194,9 @@ Bestanden zoals `history.py`, `history_parser.py` en `fp4allstatus.py` worden vo
 
 ## Versie
 
-**FP4All Local 3.1.12**
+**FP4All Local 3.1.13**
 
-Local · Realtime · No PVOutput required
+Local · Realtime · No Cloud Required
 
 ---
 <a id="english"></a>
@@ -346,15 +351,20 @@ Always create a backup before upgrading. Do not manually edit or remove files in
 
 The integration was originally developed and tested with an older generation FP4All unit.
 
-Version 3.1.12 has been tested by the maintainer with the available installations, including:
+** Version 3.1.13 has been tested by the maintainer with the available installations, including:
 
-- existing installations with multiple loggers;
-- normal readings from both inverters;
-- cache storage and recovery;
-- Home Assistant restart;
-- temporary communication loss and recovery;
-- a fresh integration setup;
-- logbook checks, with no errors reported during these tests.
+- Existing installations with multiple loggers.
+- Normal readings from both inverters.
+- Cache storage and recovery.
+- Home Assistant restart.
+- Temporary communication loss and automatic recovery.
+- A fresh integration setup.
+- Logbook checks, with no errors reported during these tests.
+
+** Improvements in version 3.1.13
+
+- History files are now processed outside the Home Assistant event loop, preventing file operations from blocking Home Assistant.
+- Storage and recovery of history data have been tested.
 
 **Newer FP4All hardware generations have not been tested separately.** Their web pages and controls appear visually similar to those of the tested generation, but visual similarity alone does not prove compatibility. Compatibility with newer hardware remains unconfirmed until that hardware is tested.
 
@@ -385,6 +395,6 @@ Files such as `history.py`, `history_parser.py`, and `fp4allstatus.py` are being
 
 ## Version
 
-**FP4All Local 3.1.12**
+**FP4All Local 3.1.13**
 
-Local · Realtime · No PVOutput required
+Local · Realtime · No Cloud Required
