@@ -162,20 +162,12 @@ De integratie is oorspronkelijk ontwikkeld en getest met een oudere generatie FP
 
 ** Verbeteringen in versie 3.1.13
 
-- Geschiedenisbestanden worden nu buiten de Home Assistant event loop verwerkt. Hierdoor wordt de werking van Home Assistant niet geblokkeerd door bestandsbewerkingen.
-- Opslag en herstel van geschiedenisgegevens zijn getest.s.
 
 **Nieuwere generaties FP4All-loggers zijn niet afzonderlijk getest.** De webpagina's en bediening lijken op basis van visuele vergelijking sterk op die van de geteste generatie, maar dat is op zichzelf geen bewijs van compatibiliteit. De werking op nieuwere hardware blijft daarom onbevestigd totdat iemand die uitvoering daadwerkelijk test.
 
 ## Toekomstige uitbreidingen
 
-De repository bevat voorbereidende bestanden die mogelijk als basis kunnen dienen voor latere uitbreidingen. Deze functionaliteit is nog niet actief of volledig uitgewerkt:
-
-- **Historische energiegegevens:** verder onderzoek naar het ophalen en verwerken van historie, mogelijk tot ongeveer één jaar terug, afhankelijk van wat de logger aanbiedt.
-- **Systeemmeldingen en foutcodes:** onderzoek naar het ophalen van waarschuwingen, storingen en eventuele tijdstippen.
-- **Aanvullende statusinformatie:** onderzoek naar extra gegevens die de logger beschikbaar stelt.
-
-Bestanden zoals `history.py`, `history_parser.py` en `fp4allstatus.py` worden voorlopig behouden als mogelijke basis voor deze uitbreidingen. Hun aanwezigheid betekent niet dat deze functies al beschikbaar zijn in de integratie.
+Historische energiegegevens, systeemmeldingen en aanvullende statusinformatie zijn momenteel niet beschikbaar. Deze functies worden pas toegevoegd wanneer ze volledig zijn uitgewerkt en getest.
 
 ## Problemen oplossen
 
@@ -194,7 +186,7 @@ Bestanden zoals `history.py`, `history_parser.py` en `fp4allstatus.py` worden vo
 
 ## Versie
 
-**FP4All Local 3.1.13**
+**FP4All Local 3.1.14**
 
 Local · Realtime · No Cloud Required
 
@@ -363,20 +355,12 @@ The integration was originally developed and tested with an older generation FP4
 
 ** Improvements in version 3.1.13
 
-- History files are now processed outside the Home Assistant event loop, preventing file operations from blocking Home Assistant.
-- Storage and recovery of history data have been tested.
 
 **Newer FP4All hardware generations have not been tested separately.** Their web pages and controls appear visually similar to those of the tested generation, but visual similarity alone does not prove compatibility. Compatibility with newer hardware remains unconfirmed until that hardware is tested.
 
 ## Future improvements
 
-The repository contains preparatory files that may serve as a basis for future enhancements. These features are not active or fully implemented yet:
-
-- **Historical energy data:** further investigation into retrieving and processing history, potentially up to approximately one year, depending on logger capabilities.
-- **System messages and error codes:** investigation into retrieving warnings, faults, and any available timestamps.
-- **Additional status information:** investigation of other data exposed by the logger.
-
-Files such as `history.py`, `history_parser.py`, and `fp4allstatus.py` are being retained as potential foundations. Their presence does not mean these features are already available.
+Historical energy data, system messages, and additional status information are not currently available. These features will be added only when they are fully implemented and tested.
 
 ## Troubleshooting
 
@@ -395,6 +379,6 @@ Files such as `history.py`, `history_parser.py`, and `fp4allstatus.py` are being
 
 ## Version
 
-**FP4All Local 3.1.13**
+**FP4All Local 3.1.14**
 
 Local · Realtime · No Cloud Required

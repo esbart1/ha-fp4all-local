@@ -31,7 +31,6 @@ from .const import (
     DOMAIN,
     STATUS_XML,
 )
-from .history import download_history
 from .status import download_status
 from .index import download_index
 from .index_parser import parse_index
@@ -62,7 +61,6 @@ class FP4AllCoordinator(DataUpdateCoordinator):
         # Filled after parsing status.htm
         #
         self.status = {}
-        self.history = []
 
         #
         # Device information

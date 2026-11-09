@@ -16,7 +16,6 @@ from homeassistant.core import HomeAssistant
 
 from .const import DOMAIN
 from .coordinator import FP4AllCoordinator
-from .services import async_register_services
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -54,8 +53,6 @@ async def async_setup_entry(
         entry,
         PLATFORMS,
     )
-
-    await async_register_services(hass)
 
     #
     # Reload integration after changing OptionsFlow settings

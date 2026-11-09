@@ -2,6 +2,17 @@
 
 All notable changes to FP4All Local are documented in this file.
 
+## [3.1.14]
+
+### English
+
+- Removed the unfinished history download service and its incomplete supporting files. Historical data is not exposed as an integration feature until it is fully implemented and tested.
+
+### Nederlands
+
+- De onvoltooide service voor het downloaden van historie en de bijbehorende onvolledige bestanden verwijderd. Historische gegevens worden pas als integratiefunctie aangeboden wanneer deze volledig zijn uitgewerkt en getest.
+
+
 ## [3.1.13]
 
 ### English

@@ -15,11 +15,5 @@
     "abort": {
       "already_configured": "Deze FP4All logger is al geconfigureerd."
     }
-  },
-  "services": {
-    "download_history": {
-      "name": "Historie downloaden",
-      "description": "Download de historiepagina (daysview.htm) van alle geconfigureerde FP4All loggers."
-    }
   }
 }

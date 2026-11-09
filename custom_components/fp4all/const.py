@@ -30,10 +30,5 @@ UPDATE_INTERVALS = {
 
 STATUS_XML = "status.xml"
 STATUS_HTML = "status.htm"
-HISTORY_HTML = "daysview.htm"
 INDEX_HTML = "index.htm"
 ERRORLOG_HTML = "errorlog.htm"
-
-SERVICE_DOWNLOAD_HISTORY = "download_history"
-
-HISTORY_FOLDER = "fp4all_history"
