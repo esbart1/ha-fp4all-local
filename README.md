@@ -150,18 +150,16 @@ Maak bij updates altijd eerst een back-up. Verwijder of bewerk bestanden in `.st
 
 De integratie is oorspronkelijk ontwikkeld en getest met een oudere generatie FP4All-unit.
 
-** Versie 3.1.13 is door de maintainer getest met de beschikbare installaties, waaronder:
+**Versie 3.1.14 is door de maintainer getest op het testsysteem.** De volgende controles zijn succesvol uitgevoerd:
 
-- Bestaande installaties met meerdere loggers.
-- Normale uitlezing van beide omvormers.
-- Opslag en herstel van cachegegevens.
-- Herstart van Home Assistant.
-- Tijdelijk communicatieverlies en automatisch herstel.
-- Een nieuwe integratie-installatie.
-- Controle van het logboek, zonder gemelde fouten tijdens deze tests.
+- De integratie opnieuw laden (reload).
+- Home Assistant volledig herstarten.
+- De netwerkverbinding met de logger verbreken door de UTP-kabel los te nemen.
+- Controleren dat de sensoren de communicatiestoring melden.
+- De UTP-kabel opnieuw aansluiten en controleren dat de verbinding automatisch herstelt.
+- Controleren dat de sensoren na herstel weer actuele gegevens ontvangen.
 
-** Verbeteringen in versie 3.1.13
-
+Tijdens deze tests kwamen de sensoren na reload, herstart en herstel van de netwerkverbinding weer beschikbaar en werden de updates hervat.
 
 **Nieuwere generaties FP4All-loggers zijn niet afzonderlijk getest.** De webpagina's en bediening lijken op basis van visuele vergelijking sterk op die van de geteste generatie, maar dat is op zichzelf geen bewijs van compatibiliteit. De werking op nieuwere hardware blijft daarom onbevestigd totdat iemand die uitvoering daadwerkelijk test.
 
@@ -343,18 +341,16 @@ Always create a backup before upgrading. Do not manually edit or remove files in
 
 The integration was originally developed and tested with an older generation FP4All unit.
 
-** Version 3.1.13 has been tested by the maintainer with the available installations, including:
+**Version 3.1.14 has been tested by the maintainer on the test system.** The following checks were completed successfully:
 
-- Existing installations with multiple loggers.
-- Normal readings from both inverters.
-- Cache storage and recovery.
-- Home Assistant restart.
-- Temporary communication loss and automatic recovery.
-- A fresh integration setup.
-- Logbook checks, with no errors reported during these tests.
+- Reloading the integration.
+- Restarting Home Assistant completely.
+- Disconnecting the logger from the network by unplugging the Ethernet cable.
+- Confirming that the sensors report the communication loss.
+- Reconnecting the Ethernet cable and confirming that communication is restored automatically.
+- Confirming that the sensors receive current data again after recovery.
 
-** Improvements in version 3.1.13
-
+During these tests, the sensors became available again after reload, restart, and network recovery, and updates resumed.
 
 **Newer FP4All hardware generations have not been tested separately.** Their web pages and controls appear visually similar to those of the tested generation, but visual similarity alone does not prove compatibility. Compatibility with newer hardware remains unconfirmed until that hardware is tested.
 
