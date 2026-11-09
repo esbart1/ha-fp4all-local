@@ -2,7 +2,7 @@
 FP4All Local for Home Assistant
 
 Version : 0.4
-Build   : 3.1.12
+Build   : 3.1.14
 File    : coordinator.py
 
 DataUpdateCoordinator for FP4All Local.
