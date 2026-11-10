@@ -155,20 +155,26 @@ class FP4AllCoordinator(DataUpdateCoordinator):
             cached_data = await self._store.async_load()
             if isinstance(cached_data, dict) and cached_data:
                 self._last_good_data = cached_data
-            elif self._legacy_cache_file.is_file():
-                # Preserve data from installations that used fp4all_cache.
-                legacy_text = await asyncio.to_thread(
-                    self._legacy_cache_file.read_text,
-                    encoding="utf-8",
-                )
-                legacy_data = json.loads(legacy_text)
-                if isinstance(legacy_data, dict):
-                    self._last_good_data = legacy_data
-                    await self._store.async_save(legacy_data)
-                    _LOGGER.info(
-                        "Migrated FP4All cache for %s to Home Assistant storage",
-                        self.host,
-                    )
+            else:
+                # Check and read the legacy cache outside the event loop.
+                def read_legacy_cache():
+                    if self._legacy_cache_file.is_file():
+                        return self._legacy_cache_file.read_text(
+                            encoding="utf-8",
+                        )
+                    return None
+
+                legacy_text = await asyncio.to_thread(read_legacy_cache)
+
+                if legacy_text is not None:
+                    legacy_data = json.loads(legacy_text)
+                    if isinstance(legacy_data, dict):
+                        self._last_good_data = legacy_data
+                        await self._store.async_save(legacy_data)
+                        _LOGGER.info(
+                            "Migrated FP4All cache for %s to Home Assistant storage",
+                            self.host,
+                        )
 
             self._manufacturer = self._last_good_data.get("manufacturer")
             self._model = self._last_good_data.get("model")
