@@ -2,6 +2,28 @@
 
 All notable changes to FP4All Local are documented in this file.
 
+## [3.2.0]
+
+### Added / Toegevoegd
+
+#### English
+
+- Added Bus-Low-Fail status information and additional fault/error registration.
+- Exposed available fault details, which may include detection and recovery timestamps, fault code, description, classification and occurrence count.
+- Added supplementary recovery/status registration based on available logger and inverter information. This is an indication only and is not an official or guaranteed FP4All recovery message.
+- Added the time at which the daily maximum power was reached as the `time` attribute of the numeric **Max Power Today** sensor.
+- Retained the separate **Max Power Time** sensor so the time can be displayed independently without changing the numeric power state or its graph.
+- Kept the agreed Status and Production sensor categorization and existing entity IDs.
+
+#### Nederlands
+
+- Bus-Low-Fail-statusinformatie en aanvullende foutregistratie toegevoegd.
+- Beschikbare foutdetails beschikbaar gemaakt; deze kunnen onder andere detectie- en hersteltijdstippen, foutcode, omschrijving, classificatie en aantal meldingen bevatten.
+- Aanvullende herstel-/statusregistratie toegevoegd op basis van beschikbare logger- en omvormerinformatie. Dit is uitsluitend een indicatie en geen officieel of gegarandeerd FP4All-herstelbericht.
+- Het tijdstip waarop het maximale dagvermogen is bereikt toegevoegd als attribuut `time` van de numerieke sensor **Max Power Today**.
+- De afzonderlijke sensor **Max Power Time** behouden, zodat het tijdstip apart kan worden weergegeven zonder de numerieke vermogenswaarde of grafiek te wijzigen.
+- De afgesproken sensorindeling Status en Productie en bestaande entity-ID's behouden.
+
 ## [3.1.14]
 
 ### English
