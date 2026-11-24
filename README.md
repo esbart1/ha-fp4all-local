@@ -31,6 +31,8 @@ Dit lukt normaal gesproken overdag, wanneer de omvormer actief is (meestal tusse
 - Bestaande entity-ID's zijn bedoeld behouden te blijven bij verbeteringen aan Friendly Names.
 - Laatst bekende geldige sensorwaarden blijven beschikbaar bij tijdelijke communicatiestoringen.
 - Communicatiestatus geeft aan wanneer de logger niet bereikbaar is en wanneer verbinding is hersteld.
+- Aanvullende status- en foutinformatie, waaronder Bus-Low-Fail-status en geregistreerde foutmeldingen.
+- Registratie van het maximale vermogen van vandaag, inclusief het tijdstip waarop dit maximum is bereikt.
 - Cachegegevens worden bewaard via Home Assistant Storage (`.storage`), in plaats van in een cachemap binnen de integratie.
 
 ## Installatie
@@ -117,6 +119,14 @@ De apparaatinformatie toont onder andere het type, de firmwareversie van de FP4A
 Deze tweede afbeelding vult de sensorinformatie aan die niet op één afbeelding paste.
 
 
+## Status-, fout- en vermogensinformatie (vanaf 3.2.0)
+
+De integratie biedt aanvullende statusinformatie voor de logger en omvormer, waaronder de Bus-Low-Fail-status en beschikbare foutregistraties. De foutregistratie kan onder andere detectie- en hersteltijden, een foutcode, omschrijving, classificatie en aantal meldingen bevatten, voor zover deze gegevens door de logger worden aangeleverd.
+
+FP4All meldt niet voor iedere storing een afzonderlijk herstelbericht. De integratie registreert daarom aanvullend herstel-/statusinformatie op basis van beschikbare gegevens. Dit is een aanvullende indicatie en geen gegarandeerd of officieel herstelbericht van FP4All. De bedrijfsmodustekst `status 1` kan erop wijzen dat de omvormer actief is, maar is op zichzelf geen sluitend bewijs dat een eerdere storing volledig is hersteld.
+
+De sensor **Max Power Today** blijft een numerieke vermogenssensor, zodat de waarde bruikbaar blijft in grafieken. Het bijbehorende attribuut `time` bevat het tijdstip waarop het dagmaximum is bereikt. Daarnaast blijft de afzonderlijke sensor **Max Power Time** beschikbaar voor weergave van dat tijdstip.
+
 ## Communicatieverlies en herstel
 
 Wanneer de FP4All-logger tijdelijk niet bereikbaar is:
@@ -150,7 +160,7 @@ Maak bij updates altijd eerst een back-up. Verwijder of bewerk bestanden in `.st
 
 De integratie is oorspronkelijk ontwikkeld en getest met een oudere generatie FP4All-unit.
 
-**Versie 3.1.14 is door de maintainer getest op het testsysteem.** De volgende controles zijn succesvol uitgevoerd:
+**Versie 3.2.0 is door de maintainer getest op het testsysteem.** De volgende controles zijn succesvol uitgevoerd:
 
 - De integratie opnieuw laden (reload).
 - Home Assistant volledig herstarten.
@@ -163,9 +173,9 @@ Tijdens deze tests kwamen de sensoren na reload, herstart en herstel van de netw
 
 **Nieuwere generaties FP4All-loggers zijn niet afzonderlijk getest.** De webpagina's en bediening lijken op basis van visuele vergelijking sterk op die van de geteste generatie, maar dat is op zichzelf geen bewijs van compatibiliteit. De werking op nieuwere hardware blijft daarom onbevestigd totdat iemand die uitvoering daadwerkelijk test.
 
-## Toekomstige uitbreidingen
+## Nog niet beschikbare functies
 
-Historische energiegegevens, systeemmeldingen en aanvullende statusinformatie zijn momenteel niet beschikbaar. Deze functies worden pas toegevoegd wanneer ze volledig zijn uitgewerkt en getest.
+Historische energiegegevens zijn momenteel niet als afzonderlijke historische downloadfunctie beschikbaar. De aanvullende status- en foutinformatie, waaronder Bus-Low-Fail en foutregistraties, is vanaf versie 3.2.0 wel opgenomen.
 
 ## Problemen oplossen
 
@@ -184,7 +194,7 @@ Historische energiegegevens, systeemmeldingen en aanvullende statusinformatie zi
 
 ## Versie
 
-**FP4All Local 3.1.14**
+**FP4All Local 3.2.0**
 
 Local · Realtime · No Cloud Required
 
@@ -217,6 +227,8 @@ This is normally during daylight hours, when the inverter is active (usually bet
 - Existing entity IDs are intended to remain unchanged when Friendly Names are improved.
 - Last known valid sensor values remain available during temporary communication failures.
 - Communication status indicates when the logger is unavailable and when communication is restored.
+- Additional status and fault information, including Bus-Low-Fail status and recorded fault messages.
+- Today's maximum power is recorded with the time at which the maximum was reached.
 - Cache data is stored using Home Assistant Storage (`.storage`), not in a cache directory inside the integration folder.
 
 <a id="installation"></a>
@@ -308,6 +320,14 @@ Device information may include the inverter type, FP4All logger firmware version
 
 This second image supplements the sensor information that did not fit in a single screenshot.
 
+## Status, fault and power information (from 3.2.0)
+
+The integration provides additional logger and inverter status information, including Bus-Low-Fail status and available fault records. Depending on the data supplied by the logger, a fault record may include detection and recovery times, a fault code, description, classification and occurrence count.
+
+FP4All does not provide a separate recovery message for every fault. The integration therefore records supplementary recovery/status information based on the available data. This is an additional indication, not a guaranteed or official FP4All recovery message. The operating-mode text `status 1` may indicate that the inverter is active, but it is not conclusive proof that a previous fault has been fully cleared.
+
+The **Max Power Today** sensor remains a numeric power sensor, preserving its usefulness in graphs. Its `time` attribute contains the time at which the daily maximum was reached. The separate **Max Power Time** sensor is also retained for displaying that time.
+
 ## Communication loss and recovery
 
 When the FP4All logger is temporarily unavailable:
@@ -341,7 +361,7 @@ Always create a backup before upgrading. Do not manually edit or remove files in
 
 The integration was originally developed and tested with an older generation FP4All unit.
 
-**Version 3.1.14 has been tested by the maintainer on the test system.** The following checks were completed successfully:
+**Version 3.2.0 has been tested by the maintainer on the test system.** The following checks were completed successfully:
 
 - Reloading the integration.
 - Restarting Home Assistant completely.
@@ -354,9 +374,9 @@ During these tests, the sensors became available again after reload, restart, an
 
 **Newer FP4All hardware generations have not been tested separately.** Their web pages and controls appear visually similar to those of the tested generation, but visual similarity alone does not prove compatibility. Compatibility with newer hardware remains unconfirmed until that hardware is tested.
 
-## Future improvements
+## Features not yet available
 
-Historical energy data, system messages, and additional status information are not currently available. These features will be added only when they are fully implemented and tested.
+Historical energy data is not currently available as a separate historical download feature. Additional status and fault information, including Bus-Low-Fail and fault records, is included from version 3.2.0.
 
 ## Troubleshooting
 
@@ -375,6 +395,6 @@ Historical energy data, system messages, and additional status information are n
 
 ## Version
 
-**FP4All Local 3.1.14**
+**FP4All Local 3.2.0**
 
 Local · Realtime · No Cloud Required
