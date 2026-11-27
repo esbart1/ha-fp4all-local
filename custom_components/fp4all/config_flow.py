@@ -1,10 +1,6 @@
 """
 FP4All Local for Home Assistant
 
-Version : 0.4
-Build   : 3.0.6
-File    : config_flow.py
-
 Configuration and options flow for FP4All.
 """
 
@@ -67,39 +63,72 @@ class FP4AllConfigFlow(
 class FP4AllOptionsFlow(
     config_entries.OptionsFlow,
 ):
-    """Handle FP4All options."""
+    """Handle FP4All options in two clearly separated steps."""
 
-    async def async_step_init(
-        self,
-        user_input=None,
-    ):
-        """Manage integration options."""
-
+    async def async_step_init(self, user_input=None):
+        """Configure the update interval first."""
         if user_input is not None:
-            return self.async_create_entry(
-                title="",
-                data=user_input,
-            )
+            self._options = dict(self.config_entry.options)
+            self._options.update(user_input)
+            return await self.async_step_bus_low_fail()
 
+        options = self.config_entry.options
         return self.async_show_form(
             step_id="init",
             data_schema=vol.Schema(
                 {
                     vol.Required(
                         "update_interval",
-                        default=self.config_entry.options.get(
-                            "update_interval",
-                            "30",
-                        ),
+                        default=str(options.get("update_interval", "30")),
                     ): vol.In(
                         {
-                            "1": "Realtime (1 seconde)",
-                            "10": "10 seconden",
-                            "30": "30 seconden",
-                            "60": "1 minuut",
-                            "300": "5 minuten",
+                            "1": "1 s",
+                            "10": "10 s",
+                            "30": "30 s",
+                            "60": "1 min",
+                            "300": "5 min",
                         }
                     ),
+                }
+            ),
+        )
+
+    async def async_step_bus_low_fail(self, user_input=None):
+        """Configure the Bus-Low-Fail sun and power confirmation windows."""
+        if user_input is not None:
+            options = getattr(self, "_options", dict(self.config_entry.options))
+            options.update(user_input)
+            # Remove obsolete options after the user saves the simplified form.
+            options.pop("sunset_before_minutes", None)
+            options.pop("sunset_after_minutes", None)
+            options.pop("sunrise_window_minutes", None)
+            return self.async_create_entry(title="", data=options)
+
+        options = self.config_entry.options
+        return self.async_show_form(
+            step_id="bus_low_fail",
+            data_schema=vol.Schema(
+                {
+                    vol.Required(
+                        "sunset_margin_minutes",
+                        default=int(
+                            options.get(
+                                "sunset_margin_minutes",
+                                max(
+                                    int(options.get("sunset_before_minutes", 45)),
+                                    int(options.get("sunset_after_minutes", 45)),
+                                ),
+                            )
+                        ),
+                    ): vol.All(vol.Coerce(int), vol.Range(min=0, max=240)),
+                    vol.Required(
+                        "recovery_power_w",
+                        default=float(options.get("recovery_power_w", 5)),
+                    ): vol.All(vol.Coerce(float), vol.Range(min=0, max=5000)),
+                    vol.Required(
+                        "recovery_power_duration_minutes",
+                        default=int(options.get("recovery_power_duration_minutes", 5)),
+                    ): vol.All(vol.Coerce(int), vol.Range(min=1, max=120)),
                 }
             ),
         )

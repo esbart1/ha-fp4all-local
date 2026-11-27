@@ -1,10 +1,6 @@
 """
 FP4All Local for Home Assistant
 
-Version : 0.4
-Build   : 3.1.14
-File    : __init__.py
-
 Home Assistant integration for FP4All.
 """
 from __future__ import annotations
@@ -13,13 +9,14 @@ import logging
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+from homeassistant.helpers.event import async_track_time_change
 
 from .const import DOMAIN
 from .coordinator import FP4AllCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 
-PLATFORMS = ["sensor"]
+PLATFORMS = ["sensor", "button"]
 
 
 async def async_setup(
@@ -60,6 +57,23 @@ async def async_setup_entry(
     entry.async_on_unload(
         entry.add_update_listener(
             async_reload_entry
+        )
+    )
+
+    # Refresh all FP4All sensors shortly after local midnight. This is a normal
+    # coordinator refresh, not a full integration reload. If the inverter is
+    # offline, the coordinator still applies the daily counter rollover.
+    async def _async_daily_refresh(_now):
+        _LOGGER.debug("Running scheduled FP4All daily refresh for %s", entry.title)
+        await coordinator.async_request_refresh()
+
+    entry.async_on_unload(
+        async_track_time_change(
+            hass,
+            _async_daily_refresh,
+            hour=0,
+            minute=10,
+            second=0,
         )
     )
 

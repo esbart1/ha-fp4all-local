@@ -1,8 +1,5 @@
 """
 FP4All Local for Home Assistant
-
-Version : 0.4
-Build   : 3.0.2
 File    : status_parser.py
 
 Parses status.htm from the FP4All logger.
@@ -88,22 +85,6 @@ def _to_int(value: str | None) -> int | None:
         return None
 
     return int(digits[0])
-
-def _combine_counter(
-    high: float | int | None,
-    low: float | int | None,
-    multiplier: int,
-) -> float | None:
-    """Combine high and low counter."""
-
-    if high is None:
-        return None
-
-    if low is None:
-        low = 0
-
-    return float(high) * multiplier + float(low)
-
 
 def _mode_text(mode: int | None) -> str | None:
     """Return human readable inverter mode."""

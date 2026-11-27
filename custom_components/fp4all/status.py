@@ -1,8 +1,5 @@
 """
 FP4All Local for Home Assistant
-
-Version : 0.4
-Build   : 3.1.14
 File    : status.py
 
 Download status.htm from the FP4All logger.

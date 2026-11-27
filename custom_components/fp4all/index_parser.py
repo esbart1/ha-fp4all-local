@@ -1,10 +1,6 @@
 """
 FP4All Local for Home Assistant
 
-Version : 0.4
-Build   : 3.0.0
-File    : index_parser.py
-
 Parser for index.htm.
 """
 
