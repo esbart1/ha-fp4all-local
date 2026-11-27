@@ -15,5 +15,231 @@
     "abort": {
       "already_configured": "Deze FP4All logger is al geconfigureerd."
     }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "FP4All instellingen",
+        "description": "Stel eerst het update-interval in.",
+        "data": {
+          "update_interval": "Update-interval"
+        }
+      },
+      "bus_low_fail": {
+        "title": "Bus-Low-Fail vermogensbevestiging",
+        "description": "Stel de marge rond zonsondergang en de vermogensbevestiging voor Bus-Low-Fail in. Zonsopkomst wordt automatisch berekend.",
+        "data": {
+          "sunset_margin_minutes": "Marge vóór en na zonsondergang (minuten)",
+          "recovery_power_w": "Minimaal herstelvermogen (W)",
+          "recovery_power_duration_minutes": "Bevestigingsduur herstelvermogen (minuten)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Vermogen"
+      },
+      "temp": {
+        "name": "Temperatuur"
+      },
+      "vpv": {
+        "name": "PV-spanning"
+      },
+      "vac": {
+        "name": "AC-spanning"
+      },
+      "fac": {
+        "name": "AC-frequentie"
+      },
+      "iac": {
+        "name": "AC-stroom"
+      },
+      "today": {
+        "name": "Energie vandaag"
+      },
+      "total": {
+        "name": "Totale energie"
+      },
+      "hours": {
+        "name": "Bedrijfsuren"
+      },
+      "capacity": {
+        "name": "Omvormervermogen"
+      },
+      "vac_min": {
+        "name": "Minimale AC-spanning"
+      },
+      "vac_max": {
+        "name": "Maximale AC-spanning"
+      },
+      "fac_min": {
+        "name": "Minimale AC-frequentie"
+      },
+      "fac_max": {
+        "name": "Maximale AC-frequentie"
+      },
+      "vpv_start": {
+        "name": "PV-startspanning"
+      },
+      "t_start": {
+        "name": "Startvertraging"
+      },
+      "mode": {
+        "name": "Bedrijfsmodus (code)"
+      },
+      "timestamp": {
+        "name": "Tijdstempel"
+      },
+      "mode_text": {
+        "name": "Bedrijfsmodus",
+        "state": {
+          "standby": "Stand-by",
+          "normal_operation": "Normale werking",
+          "fault": "Storing",
+          "warning": "Waarschuwing",
+          "starting": "Opstarten",
+          "stopping": "Stoppen",
+          "test": "Test",
+          "unknown": "Onbekend"
+        }
+      },
+      "communication": {
+        "name": "Communicatiestatus",
+        "state": {
+          "connected": "Verbonden",
+          "communication_lost": "Verbinding verbroken",
+          "unavailable": "Niet beschikbaar"
+        }
+      },
+      "etotalh": {
+        "name": "Totale energie hoog"
+      },
+      "etotall": {
+        "name": "Totale energie laag"
+      },
+      "htotalh": {
+        "name": "Bedrijfsuren hoog"
+      },
+      "htotall": {
+        "name": "Bedrijfsuren laag"
+      },
+      "today_generated": {
+        "name": "Opgewekte energie vandaag"
+      },
+      "lifetime_generated": {
+        "name": "Totaal opgewekte energie"
+      },
+      "lifetime_hours": {
+        "name": "Totale bedrijfsuren"
+      },
+      "co2_saved": {
+        "name": "Bespaarde CO₂"
+      },
+      "earned": {
+        "name": "Totale opbrengst"
+      },
+      "daily_max_power_w": {
+        "name": "Maximaal vermogen vandaag"
+      },
+      "max_power_time": {
+        "name": "Tijdstip maximaal vermogen"
+      },
+      "bus_low_fail_status": {
+        "name": "Bus-Low-Fail-status",
+        "state": {
+          "no_bus_low_fail": "Geen",
+          "recovery_registered": "Herstel geregistreerd",
+          "active_waiting_for_recovery": "Actief / wacht op herstel"
+        }
+      },
+      "error_log": {
+        "name": "Foutlogboek",
+        "state": {
+          "no_utility": "Geen netspanning",
+          "no_errors_recorded": "Geen foutmeldingen",
+          "error_recorded": "Fout geregistreerd",
+          "bus_low_fail": "DC-busspanning te laag",
+          "pv_insulation_low": "PV-isolatie te laag",
+          "master_slave_measurement_difference": "Meetverschil master/slave"
+        },
+        "state_attributes": {
+          "last_error_severity": {
+            "name": "Ernst laatste fout",
+            "state": {
+              "normal": "Normaal",
+              "warning": "Waarschuwing",
+              "error": "Fout"
+            }
+          },
+          "last_error_explanation": {
+            "name": "Uitleg laatste fout",
+            "state": {
+              "unclassified": "Deze fout is nog niet automatisch beoordeeld.",
+              "bus_low_fail_unconfirmed": "DC-busspanning te laag; herstel wordt beoordeeld op zonstand en vermogen.",
+              "bus_low_fail_daytime": "Bus-Low-Fail buiten de marge rond zonsondergang.",
+              "bus_low_fail_night_pending_recovery": "Nachtelijke Bus-Low-Fail; wacht op herstelregistratie.",
+              "bus_low_fail_recovery_before_sunrise": "Herstel vóór zonsopkomst geregistreerd; wacht op productie.",
+              "bus_low_fail_recovery_outside_sunrise_window": "Herstel buiten het ingestelde zonsopkomstvenster.",
+              "bus_low_fail_waiting_for_production": "Herstel rond zonsopkomst; wacht op voldoende productie.",
+              "bus_low_fail_night_pattern_unverified": "Nachtelijk patroon, maar geen vermogensbevestiging in de historie.",
+              "bus_low_fail_expected_night": "Nachtelijke overgang; herstel bevestigd met voldoende vermogen.",
+              "grid_voltage_unavailable": "Geen netspanning gedetecteerd.",
+              "pv_insulation_low": "PV-isolatieweerstand te laag.",
+              "master_slave_measurement_difference": "Verschil tussen Master- en Slave-metingen."
+            }
+          },
+          "last_error": {
+            "name": "Laatste foutmelding"
+          },
+          "last_error_classification": {
+            "name": "Classificatie laatste fout"
+          },
+          "error_count": {
+            "name": "Aantal foutmeldingen"
+          },
+          "communication": {
+            "name": "Communicatiestatus",
+            "state": {
+              "connected": "Verbonden",
+              "communication_lost": "Verbinding verbroken",
+              "unavailable": "Niet beschikbaar"
+            }
+          },
+          "classification_summary": {
+            "name": "Overzicht foutclassificaties"
+          },
+          "recent_errors": {
+            "name": "Recente foutmeldingen"
+          }
+        }
+      },
+      "panel_last_error": {
+        "name": "Laatste Bus-Low-Fail",
+        "state": {
+          "no_bus_low_fail": "Geen",
+          "no_datetime": "Geen datum/tijd"
+        }
+      },
+      "panel_last_recovery_time": {
+        "name": "Laatste fout-/herstelregistratie",
+        "state": {
+          "no_data": "Geen gegevens"
+        }
+      },
+      "panel_sunrise": {
+        "name": "Zonsopkomst",
+        "state": {
+          "unavailable": "Niet beschikbaar"
+        }
+      },
+      "panel_sunset": {
+        "name": "Zonsondergang",
+        "state": {
+          "unavailable": "Niet beschikbaar"
+        }
+      }
+    }
   }
 }
