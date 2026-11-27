@@ -1,0 +1,245 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "FP4All Local",
+        "description": "Connect to an FP4All logger on your local network.",
+        "data": {
+          "host": "IP address"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to the FP4All logger."
+    },
+    "abort": {
+      "already_configured": "This FP4All logger is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "FP4All settings",
+        "description": "First configure the update interval.",
+        "data": {
+          "update_interval": "Update interval"
+        }
+      },
+      "bus_low_fail": {
+        "title": "Bus-Low-Fail power confirmation",
+        "description": "Configure the sunset margin and power confirmation for Bus-Low-Fail. Sunrise is calculated automatically.",
+        "data": {
+          "sunset_margin_minutes": "Margin before and after sunset (minutes)",
+          "recovery_power_w": "Minimum recovery power (W)",
+          "recovery_power_duration_minutes": "Recovery power confirmation duration (minutes)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "power": {
+        "name": "Power"
+      },
+      "temp": {
+        "name": "Temperature"
+      },
+      "vpv": {
+        "name": "PV voltage"
+      },
+      "vac": {
+        "name": "AC voltage"
+      },
+      "fac": {
+        "name": "AC frequency"
+      },
+      "iac": {
+        "name": "AC current"
+      },
+      "today": {
+        "name": "Energy today"
+      },
+      "total": {
+        "name": "Total energy"
+      },
+      "hours": {
+        "name": "Operating hours"
+      },
+      "capacity": {
+        "name": "Inverter capacity"
+      },
+      "vac_min": {
+        "name": "Minimum AC voltage"
+      },
+      "vac_max": {
+        "name": "Maximum AC voltage"
+      },
+      "fac_min": {
+        "name": "Minimum AC frequency"
+      },
+      "fac_max": {
+        "name": "Maximum AC frequency"
+      },
+      "vpv_start": {
+        "name": "PV start voltage"
+      },
+      "t_start": {
+        "name": "Start delay"
+      },
+      "mode": {
+        "name": "Operating Mode (code)"
+      },
+      "timestamp": {
+        "name": "Timestamp"
+      },
+      "mode_text": {
+        "name": "Operating Mode",
+        "state": {
+          "standby": "Standby",
+          "normal_operation": "Normal operation",
+          "fault": "Fault",
+          "warning": "Warning",
+          "starting": "Starting",
+          "stopping": "Stopping",
+          "test": "Test",
+          "unknown": "Unknown"
+        }
+      },
+      "communication": {
+        "name": "Communication status",
+        "state": {
+          "connected": "Connected",
+          "communication_lost": "Communication lost",
+          "unavailable": "Unavailable"
+        }
+      },
+      "etotalh": {
+        "name": "Total energy high"
+      },
+      "etotall": {
+        "name": "Total energy low"
+      },
+      "htotalh": {
+        "name": "Operating hours high"
+      },
+      "htotall": {
+        "name": "Operating hours low"
+      },
+      "today_generated": {
+        "name": "Today's generated energy"
+      },
+      "lifetime_generated": {
+        "name": "Lifetime generated energy"
+      },
+      "lifetime_hours": {
+        "name": "Lifetime operating hours"
+      },
+      "co2_saved": {
+        "name": "Lifetime CO₂ saved"
+      },
+      "earned": {
+        "name": "Lifetime earnings"
+      },
+      "daily_max_power_w": {
+        "name": "Maximum power today"
+      },
+      "max_power_time": {
+        "name": "Max power time"
+      },
+      "bus_low_fail_status": {
+        "name": "Bus-Low-Fail status",
+        "state": {
+          "no_bus_low_fail": "None",
+          "recovery_registered": "Recovery registered",
+          "active_waiting_for_recovery": "Active / waiting for recovery"
+        }
+      },
+      "error_log": {
+        "name": "Error log",
+        "state": {
+          "no_utility": "No grid voltage",
+          "no_errors_recorded": "No errors recorded",
+          "error_recorded": "Error recorded",
+          "bus_low_fail": "DC bus voltage too low",
+          "pv_insulation_low": "PV insulation too low",
+          "master_slave_measurement_difference": "Master/slave measurement difference"
+        },
+        "state_attributes": {
+          "last_error_severity": {
+            "name": "Last error severity",
+            "state": {
+              "normal": "Normal",
+              "warning": "Warning",
+              "error": "Error"
+            }
+          },
+          "last_error_explanation": {
+            "name": "Last error explanation",
+            "state": {
+              "unclassified": "This error has not been automatically assessed.",
+              "bus_low_fail_unconfirmed": "DC bus voltage too low; recovery is assessed using sunlight and power.",
+              "bus_low_fail_daytime": "Bus-Low-Fail outside the sunset margin.",
+              "bus_low_fail_night_pending_recovery": "Night-time Bus-Low-Fail; waiting for a recovery record.",
+              "bus_low_fail_recovery_before_sunrise": "Recovery recorded before sunrise; waiting for production.",
+              "bus_low_fail_recovery_outside_sunrise_window": "Recovery outside the configured sunrise window.",
+              "bus_low_fail_waiting_for_production": "Recovery around sunrise; waiting for sufficient production.",
+              "bus_low_fail_night_pattern_unverified": "Night-time pattern, but no power confirmation is available in the history.",
+              "bus_low_fail_expected_night": "Night-time transition; recovery confirmed by sufficient power.",
+              "grid_voltage_unavailable": "No grid voltage detected.",
+              "pv_insulation_low": "PV insulation resistance too low.",
+              "master_slave_measurement_difference": "Difference between Master and Slave measurements."
+            }
+          },
+          "last_error": {
+            "name": "Last error"
+          },
+          "last_error_classification": {
+            "name": "Last error classification"
+          },
+          "error_count": {
+            "name": "Error count"
+          },
+          "communication": {
+            "name": "Communication status",
+            "state": {
+              "connected": "Connected",
+              "communication_lost": "Communication lost",
+              "unavailable": "Unavailable"
+            }
+          },
+          "classification_summary": {
+            "name": "Classification summary"
+          },
+          "recent_errors": {
+            "name": "Recent errors"
+          }
+        }
+      },
+      "panel_last_error": {
+        "name": "Last Bus-Low-Fail",
+        "state": {
+          "no_bus_low_fail": "None",
+          "no_datetime": "No date/time"
+        }
+      },
+      "panel_last_recovery_time": {
+        "name": "Last fault/recovery record",
+        "state": {
+          "no_data": "No data"
+        }
+      },
+      "panel_sunrise": {
+        "name": "Sunrise",
+        "state": {
+          "unavailable": "Unavailable"
+        }
+      },
+      "panel_sunset": {
+        "name": "Sunset",
+        "state": {
+          "unavailable": "Unavailable"
+        }
+      }
+    }
+  }
+}

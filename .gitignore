@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Home Assistant runtime data
+ 
+
+# Local/runtime files
+*.log
+*.tmp
+
+
+# Generated packages
+*.zip
+*.rar
+*.txt
+
+# Local editor/OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

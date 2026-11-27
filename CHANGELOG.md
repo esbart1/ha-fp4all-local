@@ -1,0 +1,107 @@
+# Changelog
+
+All notable changes to FP4All Local are documented in this file.
+
+## [3.2.0]
+
+### Added / Toegevoegd
+
+#### English
+
+- Added Bus-Low-Fail status information and additional fault/error registration.
+- Exposed available fault details, which may include detection and recovery timestamps, fault code, description, classification and occurrence count.
+- Added supplementary recovery/status registration based on available logger and inverter information. This is an indication only and is not an official or guaranteed FP4All recovery message.
+- Added the time at which the daily maximum power was reached as the `time` attribute of the numeric **Max Power Today** sensor.
+- Retained the separate **Max Power Time** sensor so the time can be displayed independently without changing the numeric power state or its graph.
+- Kept the agreed Status and Production sensor categorization and existing entity IDs.
+
+#### Nederlands
+
+- Bus-Low-Fail-statusinformatie en aanvullende foutregistratie toegevoegd.
+- Beschikbare foutdetails beschikbaar gemaakt; deze kunnen onder andere detectie- en hersteltijdstippen, foutcode, omschrijving, classificatie en aantal meldingen bevatten.
+- Aanvullende herstel-/statusregistratie toegevoegd op basis van beschikbare logger- en omvormerinformatie. Dit is uitsluitend een indicatie en geen officieel of gegarandeerd FP4All-herstelbericht.
+- Het tijdstip waarop het maximale dagvermogen is bereikt toegevoegd als attribuut `time` van de numerieke sensor **Max Power Today**.
+- De afzonderlijke sensor **Max Power Time** behouden, zodat het tijdstip apart kan worden weergegeven zonder de numerieke vermogenswaarde of grafiek te wijzigen.
+- De afgesproken sensorindeling Status en Productie en bestaande entity-ID's behouden.
+
+## [3.1.14]
+
+### English
+
+- Removed the unfinished history download service and its incomplete supporting files. Historical data is not exposed as an integration feature until it is fully implemented and tested.
+
+### Nederlands
+
+- De onvoltooide service voor het downloaden van historie en de bijbehorende onvolledige bestanden verwijderd. Historische gegevens worden pas als integratiefunctie aangeboden wanneer deze volledig zijn uitgewerkt en getest.
+
+
+## [3.1.13]
+
+### English
+
+- Moved history directory creation and file writing to Home Assistant's executor to prevent blocking the event loop.
+
+### Nederlands
+
+- Het aanmaken van de geschiedenismap en het schrijven van geschiedenisbestanden verplaatst naar de executor van Home Assistant. Hierdoor wordt het event loop niet geblokkeerd door bestandsbewerkingen.
+
+## [3.1.12]
+
+### English
+
+- Migrated logger cache storage to Home Assistant's `.storage` system.
+- Verified that cached sensor data persists across Home Assistant restarts.
+- Tested recovery after temporary communication loss with the logger.
+- Tested a fresh integration installation and operation with two inverters.
+- No errors were observed in the tested Home Assistant logs.
+- Existing helper files for possible future history and status/error functionality are retained; these features are not part of the active functionality in this release.
+
+### Nederlands
+
+- De opslag van logger-cachegegevens is verplaatst naar het `.storage`-systeem van Home Assistant.
+- Getest dat opgeslagen sensorgegevens behouden blijven na een herstart van Home Assistant.
+- Herstel na tijdelijk communicatieverlies met de logger getest.
+- Een nieuwe installatie van de integratie en de werking met twee omvormers getest.
+- In de gecontroleerde Home Assistant-logboeken zijn geen fouten waargenomen.
+- Bestaande hulpprogrammabestanden voor mogelijke toekomstige geschiedenis- en status-/foutinformatie zijn behouden. Deze functies zijn in deze versie nog niet actief.
+
+### Compatibility / Compatibiliteit
+
+- The tested hardware consists of older FP4All logger models. Newer logger generations have not been tested separately; similar-looking web pages do not confirm compatibility.
+- De geteste hardware bestaat uit oudere FP4All-loggermodellen. Nieuwere generaties zijn niet afzonderlijk getest; vergelijkbare webpagina's bewijzen geen compatibiliteit.
+
+## [3.1.11]
+
+- Documentation cleanup: remove duplicated and outdated release notes from README.md and link to this changelog.
+- Release-preparation update only; no intended functional changes.
+
+## [3.1.10]
+
+- HACS release-only update to address the timing/order of HACS release steps.
+- No functional changes compared with version 3.1.9.
+
+## [3.1.9]
+
+### Added
+- Communication status reporting, including `Connected` and `Communication lost` states.
+- Local cache support to retain the last valid sensor data for each logger.
+- Automatic, more recognizable sensor Friendly Names using available logger and inverter information.
+
+### Improved
+- Recovery after temporary network or logger communication loss.
+- Sensor availability and cached data handling during Home Assistant reloads and restarts.
+- Operating-mode reporting during communication loss, using a warning state.
+- Handling of inverter details, including manufacturer, model, firmware, serial number, capacity, voltage and frequency limits, PV start voltage, and start delay.
+- Handling of energy-production and operating-hours data.
+
+### Compatibility
+- Existing entity IDs are intended to remain unchanged when Friendly Names are improved.
+- The cache uses one file per logger; the additional manufacturer/model/serial cache file is no longer required.
+
+## [2.6]
+
+- Previous generation of the FP4All Local integration.
+
+---
+
+For installation and configuration instructions, see [README.md](README.md).
