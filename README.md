@@ -9,6 +9,20 @@
 <a id="nederlands"></a>
 ## 🇳🇱 Nederlands
 
+## Inhoud
+
+- [Functies](#functies)
+- [Installatie](#installatie)
+- [Configuratie stap voor stap](#configuratie-stap-voor-stap)
+- [Meerdere FP4All-loggers](#meerdere-fp4all-loggers)
+- [Screenshots en sensoroverzichten](#screenshots)
+- [Maximaal vermogen vandaag](#5-maximaal-vermogen-vandaag)
+- [Bus-Low-Fail-vermogensbevestiging](#6-instelling-bus-low-fail-vermogensbevestiging)
+- [Status-, fout- en vermogensinformatie](#status-fout-en-vermogensinformatie-vanaf-320)
+- [Communicatieverlies en herstel](#communicatieverlies-en-herstel)
+- [Opslag en problemen oplossen](#opslag)
+
+
 FP4All Local maakt de lokaal beschikbare gegevens van een FP4All-logger rechtstreeks beschikbaar in Home Assistant. De integratie communiceert via het lokale netwerk met de webinterface van de logger. Een online dienst zoals PVOutput is hiervoor niet nodig.
 
 De actuele gegevens kunnen worden gebruikt in dashboards, energieoverzichten en automatiseringen. Denk bijvoorbeeld aan het inschakelen van een elektrische verbruiker, laadpaal of warmtepomp wanneer er voldoende zonne-energie beschikbaar is. Houd bij het automatiseren rekening met de actualiteit en betrouwbaarheid van de gegevens.
@@ -228,6 +242,20 @@ Local · Realtime · No Cloud Required
 ---
 <a id="english"></a>
 ## 🇬🇧 English
+
+## Contents
+
+- [Features](#features)
+- [Installation](#installation-1)
+- [Step-by-step configuration](#step-by-step-configuration)
+- [Multiple FP4All loggers](#multiple-fp4all-loggers)
+- [Screenshots and sensor overviews](#screenshots-1)
+- [Maximum power today](#5-maximum-power-today)
+- [Bus-Low-Fail power confirmation](#6-bus-low-fail-power-confirmation-setting)
+- [Status, fault and power information](#status-fault-and-power-information-from-320)
+- [Communication loss and recovery](#communication-loss-and-recovery)
+- [Storage and troubleshooting](#storage-1)
+
 
 
 **Local, realtime Home Assistant integration for FP4All PV inverter loggers — no PVOutput required.**
