@@ -100,24 +100,53 @@ De voorbeeldwaarde is uitsluitend ter illustratie.
 
 ## Screenshots
 
-### 1. Hoofdoverzicht en loggers toevoegen
+### 1. Configuratie en sensoroverzicht
 
 ![FP4All Local sensorenoverzicht en configuratie](screenshots/systeminfo.png)
 
-Deze afbeelding toont de FP4All-sensoren in Home Assistant en het scherm waarmee je eventueel extra FP4All-loggers kunt toevoegen.
+Deze afbeelding toont de FP4All-sensoren in Home Assistant en het scherm waarmee je extra FP4All-loggers kunt toevoegen.
 
-### 2. Apparaat- en sensorinformatie
+### 2. Statuspaneel en activiteit
+
+![FP4All Local statuspaneel](screenshots/Statuspanel.png)
+
+Het statuspaneel brengt de belangrijkste informatie bij elkaar: apparaatgegevens, bedrijfsmodus, Bus-Low-Fail-status, communicatiestatus en foutlogboek. Rechts staan gebeurtenissen zoals zonsopkomst, zonsondergang en de laatst geregistreerde fout- of herstelmelding. De getoonde waarden zijn voorbeelden van één meetmoment.
+
+### 3. Apparaat- en sensorinformatie
 
 ![FP4All Local apparaatinformatie en sensorinformatie](screenshots/sensoreninfo.png)
 
-De apparaatinformatie toont onder andere het type, de firmwareversie van de FP4All-logger en het serienummer van de omvormer. De herkenbare naam kan het omvormertype en de laatste vier cijfers van het serienummer bevatten.
-
-### 3. Aanvullende sensorinformatie
+De apparaatinformatie toont onder andere het omvormertype, de firmwareversie en het serienummer. De herkenbare naam kan het omvormertype en de laatste vier cijfers van het serienummer bevatten.
 
 ![Aanvullende FP4All Local sensorinformatie](screenshots/sensoreninfo1.png)
 
-Deze tweede afbeelding vult de sensorinformatie aan die niet op één afbeelding paste.
+Deze afbeelding toont aanvullende sensoren en meetwaarden die niet in één overzicht passen.
 
+### 4. Sensoroverzichten van verschillende omvormers
+
+![Sensoroverzicht SMA-omvormer](screenshots/Sensor.png)
+
+Voorbeeld van apparaatinformatie en sensoren van een SMA-omvormer, waaronder AC-frequentie, AC-spanning, AC-stroom, bedrijfsuren, CO₂-besparing, energie vandaag en maximaal vermogen vandaag.
+
+![Sensoroverzicht PHOENIXTEC-omvormer](screenshots/sensorinfo.png)
+
+Voorbeeld van apparaatinformatie en actuele sensoren van een PHOENIXTEC PV 2800, waaronder AC-frequentie, AC-spanning, AC-stroom en bedrijfsuren.
+
+![Aanvullende sensoren en energiegegevens](screenshots/Sensor1.png)
+
+Dit vervolg toont onder andere opgewekte energie vandaag, PV-spanning, PV-startspanning, startvertraging, temperatuur, tijdstempel, tijdstip maximaal vermogen en totalen.
+
+### 5. Maximaal vermogen vandaag
+
+![Max Power Today met tijdstip](screenshots/max power.png)
+
+De sensor **Maximum Power Today** toont het hoogste vermogen dat vandaag is gemeten. **Time reached** geeft het tijdstip waarop dit maximum is bereikt.
+
+### 6. Instelling Bus-Low-Fail-vermogensbevestiging
+
+![Instelling Bus-Low-Fail power confirmation](screenshots/Bus-Low-Fail-vermogensbevestiging.png)
+
+Via deze instelling configureer je de tijdsmarge rond zonsondergang, het minimale herstelvermogen en de duur waarover het herstelvermogen bevestigd moet worden. De zonsopkomst wordt automatisch berekend.
 
 ## Status-, fout- en vermogensinformatie (vanaf 3.2.0)
 
@@ -300,25 +329,53 @@ The value is illustrative only.
 
 ## Screenshots
 
-### 1. Sensor overview and adding loggers
+### 1. Configuration and sensor overview
 
-
-![FP4All Local sensorenoverzicht en configuratie](screenshots/systeminfo.png)
+![FP4All Local sensor overview and configuration](screenshots/systeminfo.png)
 
 This image shows the FP4All sensors in Home Assistant and the screen used to add additional FP4All loggers.
 
-### 2. Device and sensor information
+### 2. Status panel and activity
 
+![FP4All Local status panel](screenshots/Statuspanel.png)
+
+The status panel brings together key information: device details, operating mode, Bus-Low-Fail status, communication status and the error log. The activity panel shows events such as sunrise, sunset and the most recently recorded fault or recovery message. The displayed values are examples from one point in time.
+
+### 3. Device and sensor information
 
 ![FP4All Local device information and sensor details](screenshots/sensoreninfo.png)
 
-Device information may include the inverter type, FP4All logger firmware version, and inverter serial number. Readable names can include the inverter type and the last four serial digits.
-
-### 3. Additional sensor information
+Device information may include the inverter model, firmware version and serial number. Readable names can include the inverter model and the last four serial digits.
 
 ![Additional FP4All Local sensor information](screenshots/sensoreninfo1.png)
 
-This second image supplements the sensor information that did not fit in a single screenshot.
+This image shows additional sensors and measurements that do not fit in a single overview.
+
+### 4. Sensor overviews for different inverters
+
+![SMA inverter sensor overview](screenshots/Sensor.png)
+
+Example of device information and sensors for an SMA inverter, including AC frequency, AC voltage, AC current, operating hours, CO₂ savings, energy today and maximum power today.
+
+![PHOENIXTEC inverter sensor overview](screenshots/sensorinfo.png)
+
+Example of device information and current sensors for a PHOENIXTEC PV 2800, including AC frequency, AC voltage, AC current and operating hours.
+
+![Additional sensors and energy data](screenshots/Sensor1.png)
+
+This continuation shows, among other values, energy generated today, PV voltage, PV startup voltage, start delay, temperature, timestamp, the time maximum power was reached and cumulative totals.
+
+### 5. Maximum power today
+
+![Max Power Today and time reached](screenshots/max power.png)
+
+The **Maximum Power Today** sensor shows the highest power measured today. **Time reached** shows when that maximum was reached.
+
+### 6. Bus-Low-Fail power confirmation setting
+
+![Bus-Low-Fail power confirmation setting](screenshots/Bus-Low-Fail-vermogensbevestiging.png)
+
+This setting lets you configure the time margin around sunset, the minimum recovery power and the duration for which recovery power must be confirmed. Sunrise is calculated automatically.
 
 ## Status, fault and power information (from 3.2.0)
 
