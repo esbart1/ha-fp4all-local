@@ -112,16 +112,6 @@ Deze afbeelding toont de FP4All-sensoren in Home Assistant en het scherm waarmee
 
 Het statuspaneel brengt de belangrijkste informatie bij elkaar: apparaatgegevens, bedrijfsmodus, Bus-Low-Fail-status, communicatiestatus en foutlogboek. Rechts staan gebeurtenissen zoals zonsopkomst, zonsondergang en de laatst geregistreerde fout- of herstelmelding. De getoonde waarden zijn voorbeelden van één meetmoment.
 
-### 3. Apparaat- en sensorinformatie
-
-![FP4All Local apparaatinformatie en sensorinformatie](screenshots/sensoreninfo.png)
-
-De apparaatinformatie toont onder andere het omvormertype, de firmwareversie en het serienummer. De herkenbare naam kan het omvormertype en de laatste vier cijfers van het serienummer bevatten.
-
-![Aanvullende FP4All Local sensorinformatie](screenshots/sensoreninfo1.png)
-
-Deze afbeelding toont aanvullende sensoren en meetwaarden die niet in één overzicht passen.
-
 ### 4. Sensoroverzichten van verschillende omvormers
 
 ![Sensoroverzicht SMA-omvormer](screenshots/Sensor.png)
@@ -340,16 +330,6 @@ This image shows the FP4All sensors in Home Assistant and the screen used to add
 ![FP4All Local status panel](screenshots/Statuspanel.png)
 
 The status panel brings together key information: device details, operating mode, Bus-Low-Fail status, communication status and the error log. The activity panel shows events such as sunrise, sunset and the most recently recorded fault or recovery message. The displayed values are examples from one point in time.
-
-### 3. Device and sensor information
-
-![FP4All Local device information and sensor details](screenshots/sensoreninfo.png)
-
-Device information may include the inverter model, firmware version and serial number. Readable names can include the inverter model and the last four serial digits.
-
-![Additional FP4All Local sensor information](screenshots/sensoreninfo1.png)
-
-This image shows additional sensors and measurements that do not fit in a single overview.
 
 ### 4. Sensor overviews for different inverters
 
