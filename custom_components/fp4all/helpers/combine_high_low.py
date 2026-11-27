@@ -1,9 +1,6 @@
 """
 FP4All Local for Home Assistant
 
-Version : 0.3
-Build   : 2.6.1
-File    : combine_high_low.py
 
 Helper to combine High/Low counter values.
 """
