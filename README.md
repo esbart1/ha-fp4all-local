@@ -126,6 +126,24 @@ Voorbeeld van apparaatinformatie en actuele sensoren van een PHOENIXTEC PV 2800,
 
 Dit vervolg toont onder andere opgewekte energie vandaag, PV-spanning, PV-startspanning, startvertraging, temperatuur, tijdstempel, tijdstip maximaal vermogen en totalen.
 
+#### Grafieken en meetgeschiedenis
+
+![AC-stroom met historische grafiek](screenshots/current.png)
+
+Deze grafiek toont de gemeten AC-stroom en het verloop daarvan in Home Assistant.
+
+![PV-spanning met historische grafiek](screenshots/pvvolt.png)
+
+Deze grafiek toont de DC-spanning van de zonnepanelen (PV Voltage) in de tijd.
+
+![Historie van opgewekte energie](screenshots/pwrhistory.png)
+
+Voorbeeld van de historische weergave van de dagelijks opgewekte energie.
+
+![Instelling van het update-interval](screenshots/readtime.png)
+
+Hier stel je in hoe vaak de integratie gegevens ophaalt. De afbeelding toont de keuze voor een update-interval van vijf minuten.
+
 ### 5. Maximaal vermogen vandaag
 
 ![Max Power Today met tijdstip](screenshots/max%20power.png)
@@ -157,16 +175,6 @@ Wanneer de FP4All-logger tijdelijk niet bereikbaar is:
 Wanneer de verbinding terugkeert, haalt de integratie opnieuw actuele gegevens op en wordt de communicatiestatus hersteld.
 
 De cache helpt bij tijdelijk communicatieverlies en bij een herstart van Home Assistant. De opgeslagen waarden zijn laatst bekende waarden en hoeven dus niet de actuele fysieke situatie weer te geven zolang communicatie ontbreekt.
-
-## Voorbeelden van meetgegevens en grafieken
-In de map screenshots staan voorbeelden van meetgegevens en daggrafieken van de installatie.
-
-Deze voorbeelden tonen onder andere:
-- Stroom
-- Vermogen
-- DC-spanning van de omvormer
-
-De grafieken geven een indruk van de beschikbare meetgegevens en hoe deze in Home Assistant kunnen worden weergegeven. De daadwerkelijke grafieken en historische gegevens zijn afhankelijk van de beschikbare sensoren, recorder-instellingen en de configuratie van Home Assistant.
 
 ## Opslag
 
@@ -345,9 +353,27 @@ Example of device information and current sensors for a PHOENIXTEC PV 2800, incl
 
 This continuation shows, among other values, energy generated today, PV voltage, PV startup voltage, start delay, temperature, timestamp, the time maximum power was reached and cumulative totals.
 
+#### Graphs and measurement history
+
+![AC current history graph](screenshots/current.png)
+
+This graph shows the measured AC current and how it changes over time in Home Assistant.
+
+![PV voltage history graph](screenshots/pvvolt.png)
+
+This graph shows the solar panels' DC voltage (PV Voltage) over time.
+
+![Generated energy history](screenshots/pwrhistory.png)
+
+Example of the historical view of energy generated during the day.
+
+![Update interval setting](screenshots/readtime.png)
+
+This setting controls how often the integration retrieves data. The screenshot shows a five-minute update interval.
+
 ### 5. Maximum power today
 
-![Max Power Today and time reached](screenshots/max power.png)
+![Max Power Today and time reached](screenshots/max%20power.png)
 
 The **Maximum Power Today** sensor shows the highest power measured today. **Time reached** shows when that maximum was reached.
 
@@ -377,16 +403,6 @@ When communication returns, the integration retrieves current data and restores 
 
 The cache helps during temporary communication loss and Home Assistant restarts. Cached values are the last known values and may not represent the current physical situation while communication is unavailable.
 
-
-## Examples of measurements and graphs
-
-The screenshots folder contains examples of measurements and daily graphs from the installation.
-These examples include:
-- Current
-- Power
-- DC voltage of the inverter
-
-The graphs provide an impression of the available measurements and how they can be displayed in Home Assistant. The actual graphs and historical data depend on the available sensors, recorder settings and Home Assistant configuration.
 
 ## Storage
 
