@@ -128,7 +128,7 @@ Dit vervolg toont onder andere opgewekte energie vandaag, PV-spanning, PV-starts
 
 ### 5. Maximaal vermogen vandaag
 
-![Max Power Today met tijdstip](screenshots/max power.png)
+![Max Power Today met tijdstip](screenshots/max%20power.png)
 
 De sensor **Maximum Power Today** toont het hoogste vermogen dat vandaag is gemeten. **Time reached** geeft het tijdstip waarop dit maximum is bereikt.
 
