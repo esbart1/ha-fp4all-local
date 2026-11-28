@@ -491,16 +491,24 @@ class FP4AllCoordinator(DataUpdateCoordinator):
         if data.get("mode") is not None and data.get("mode") != 7:
             self._last_mode = data.get("mode")
 
-        # Sunrise/startup guard: only accept these cumulative/grid measurements
-        # while the inverter explicitly reports Normal Operation (mode 1).
-        # In every other mode, retain the last known values so transient startup
-        # zeros cannot overwrite the persistent cache or create graph dips.
-        # The guard is deliberately limited to values that should remain stable
-        # while the inverter is stopped; live production values such as power,
-        # PV voltage/current and daily energy are handled separately.
+        # AC voltage and frequency are live grid measurements. Accept them
+        # as soon as the logger reports a valid positive value, regardless of
+        # operating mode. Ignore startup zeros/invalid values and retain the
+        # last valid reading instead.
+        for key in ("vac", "fac"):
+            try:
+                live_value = float(data.get(key))
+            except (TypeError, ValueError):
+                live_value = 0.0
+            if live_value <= 0:
+                cached_value = self._last_good_data.get(key)
+                if cached_value is not None:
+                    data[key] = cached_value
+
+        # Sunrise/startup guard: retain cumulative counters and lifetime values
+        # until the inverter explicitly reports Normal Operation (mode 1).
+        # This prevents transient startup zeros from overwriting valid totals.
         _MODE_1_ONLY_CACHE_KEYS = (
-            "vac",
-            "fac",
             "hours",
             "lifetime_hours",
             "htotalh",
